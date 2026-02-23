@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Oladele Graphics Portfolio — Harqheem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{--black:#080808;--white:#F5F2ED;--accent:#C8FF00;--accent2:#FF3D00;--mid:#1A1A1A;--border:rgba(245,242,237,0.12);--text-muted:rgba(245,242,237,0.45);}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--white);font-family:'Syne',sans-serif;overflow-x:hidden;cursor:none;}
+  .cursor{position:fixed;width:12px;height:12px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+  .cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,255,0,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
+  .cursor.hover{width:8px;height:8px;}.cursor-ring.hover{width:60px;height:60px;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.05em;color:var(--white);text-decoration:none;}.nav-logo span{color:var(--accent);}
+  .nav-back{display:flex;align-items:center;gap:10px;color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;}.nav-back:hover{color:var(--accent);}
+  .nav-back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;}
+
+  .project-hero{min-height:85vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 48px 72px;position:relative;overflow:hidden;background:linear-gradient(160deg,#080808 0%,#0e0e14 50%,#141420 100%);}
+  .project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,1) 0%,rgba(8,8,8,0.3) 60%,transparent 100%);}
+  /* Decorative grid lines */
+  .project-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(200,255,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0;}
+  .hero-content{position:relative;z-index:1;}
+  .project-tag{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .project-tag::before{content:'';width:30px;height:1px;background:var(--accent);}
+  .project-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,120px);line-height:.92;letter-spacing:-.01em;margin-bottom:40px;}
+  .project-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--accent);}
+  .hero-meta-row{display:flex;gap:64px;flex-wrap:wrap;}
+  .meta-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
+  .meta-value{font-size:15px;font-weight:600;color:var(--white);}
+
+  /* Portfolio mockup hero */
+  .hero-visual{position:absolute;right:48px;bottom:72px;z-index:1;width:min(440px,42%);opacity:.85;}
+  .port-shell{background:rgba(8,8,8,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;backdrop-filter:blur(8px);}
+  .port-header{padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;}
+  .port-logo-mark{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;color:var(--white);}
+  .port-nav-dots{display:flex;gap:8px;}
+  .port-nav-dot{width:40px;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;}
+  .port-nav-dot.active{background:var(--accent);}
+  .port-body{padding:20px 24px;}
+  .port-hero-img{height:80px;background:linear-gradient(135deg,rgba(200,255,0,0.06),rgba(20,20,32,0.8));border-radius:4px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;}
+  .port-headline{height:12px;width:70%;background:rgba(255,255,255,0.15);border-radius:4px;margin-bottom:8px;}
+  .port-sub{height:8px;width:50%;background:rgba(255,255,255,0.06);border-radius:4px;margin-bottom:16px;}
+  .port-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .port-card{height:50px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:4px;}
+  .port-card.f{background:rgba(200,255,0,0.06);border-color:rgba(200,255,0,0.12);}
+
+  .container{max-width:900px;margin:0 auto;padding:0 48px;}
+  .content-section{padding:96px 0;border-bottom:1px solid var(--border);}
+  .content-section:last-of-type{border-bottom:none;}
+  .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+  .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,72px);line-height:.95;margin-bottom:32px;}
+  .body-text{font-family:'Inter',sans-serif;font-size:16px;line-height:1.85;color:var(--text-muted);font-weight:300;max-width:680px;}
+  .body-text+.body-text{margin-top:20px;}
+  .metrics-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:48px 0;}
+  .metric-box{background:var(--mid);padding:40px 32px;text-align:center;}
+  .metric-box.highlight{background:var(--accent);}
+  .metric-num{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:var(--accent);}
+  .metric-box.highlight .metric-num{color:var(--black);}
+  .metric-label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-top:8px;}
+  .metric-box.highlight .metric-label{color:rgba(8,8,8,0.6);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px;}
+  .two-col .body-text{max-width:none;}
+  .callout{background:var(--mid);border-left:3px solid var(--accent);padding:32px 36px;margin:40px 0;}
+  .callout-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+  .callout-text{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.5;color:var(--white);font-style:italic;}
+  .tags-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;}
+  .tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);color:var(--text-muted);padding:8px 16px;}
+  .process-list{margin-top:40px;}
+  .p-step{display:flex;gap:32px;padding:36px 0;border-bottom:1px solid var(--border);}
+  .p-step:first-child{border-top:1px solid var(--border);}
+  .p-step:hover .p-num{color:var(--accent);}
+  .p-num{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;color:rgba(245,242,237,0.1);min-width:60px;transition:color .3s;}
+  .p-title{font-size:18px;font-weight:700;margin-bottom:10px;}
+  .p-desc{font-family:'Inter',sans-serif;font-size:14px;line-height:1.75;color:var(--text-muted);font-weight:300;max-width:560px;}
+
+  /* Design direction cards */
+  .direction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
+  .dir-card{background:var(--mid);padding:32px;transition:background .3s;}
+  .dir-card:hover{background:#141414;}
+  .dir-card.chosen{background:var(--accent);}
+  .dir-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;}
+  .dir-label.chosen-lbl{color:var(--black);}
+  .dir-swatch{height:60px;border-radius:4px;margin-bottom:16px;}
+  .dir-name{font-family:'Bebas Neue',sans-serif;font-size:24px;margin-bottom:8px;}
+  .dir-card.chosen .dir-name{color:var(--black);}
+  .dir-desc{font-family:'Inter',sans-serif;font-size:12px;line-height:1.6;color:var(--text-muted);}
+  .dir-card.chosen .dir-desc{color:rgba(8,8,8,0.65);}
+  .chosen-badge{display:inline-block;background:var(--black);color:var(--accent);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:12px;}
+
+  /* Portfolio screens showcase */
+  .port-screens{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
+  .port-screen{background:var(--mid);aspect-ratio:4/3;overflow:hidden;}
+  .port-screen.full-width{grid-column:span 2;aspect-ratio:16/6;}
+  .port-screen-inner{width:100%;height:100%;padding:24px;display:flex;align-items:center;justify-content:center;}
+
+  /* Return first project link */
+  .back-to-first{background:var(--mid);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;transition:background .3s;}
+  .back-to-first:hover{background:#141414;}
+  .next-label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;}
+  .next-title{font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;color:var(--white);}
+  .next-arrow{width:64px;height:64px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .3s,border-color .3s,transform .3s;}
+  .back-to-first:hover .next-arrow{background:var(--accent);border-color:var(--accent);transform:rotate(-135deg);}
+  .next-arrow svg{width:24px;height:24px;fill:none;stroke:var(--white);stroke-width:2;}
+  .back-to-first:hover .next-arrow svg{stroke:var(--black);}
+  footer{background:var(--black);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--white);text-decoration:none;}.footer-logo span{color:var(--accent);}
+  .footer-copy{font-size:12px;color:var(--text-muted);}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  .hero-content>*{animation:fadeUp .9s forwards;opacity:0;}
+  .hero-content>*:nth-child(1){animation-delay:.2s}.hero-content>*:nth-child(2){animation-delay:.35s}.hero-content>*:nth-child(3){animation-delay:.5s}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:transform .3s,opacity .3s;}
+  .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-hamburger.open span:nth-child(2){opacity:0;}
+  .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(8,8,8,0.98);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s;}
+  .mobile-menu.open{opacity:1;pointer-events:all;}
+  .mobile-menu a{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.04em;color:var(--white);text-decoration:none;}
+  .mobile-menu .mobile-cta{margin-top:16px;font-size:32px;background:var(--accent);color:var(--black) !important;padding:12px 32px;}
+  @media(max-width:800px){
+    .cursor,.cursor-ring{display:none;}
+    body{cursor:auto;}
+    nav{padding:18px 24px;}
+    .nav-back span{display:none;}
+    .nav-hamburger{display:flex;}
+    .project-hero{padding:100px 24px 56px;min-height:auto;}
+    .hero-visual{display:none;}
+    .project-title{font-size:clamp(40px,12vw,72px);}
+    .hero-meta-row{gap:24px;}
+    .meta-value{font-size:13px;}
+    .container{padding:0 24px;}
+    .content-section{padding:64px 0;}
+    .section-title{font-size:clamp(36px,9vw,56px);}
+    .metrics-row,.two-col,.direction-grid,.port-screens{grid-template-columns:1fr;gap:2px;}
+    .port-screen.full-width{grid-column:span 1;aspect-ratio:4/3;}
+    .callout{padding:24px 20px;}
+    .callout-text{font-size:18px;}
+    .back-to-first{padding:48px 24px;flex-direction:column;gap:24px;align-items:flex-start;}
+    footer{flex-direction:column;gap:16px;padding:24px;}
+  }
+  @media(max-width:480px){
+    .project-title{font-size:clamp(36px,11vw,56px);}
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#projects">← All Work</a>
+  <a href="speedy-card-lister.html">Speedy Card</a>
+  <a href="rideon.html">RideON</a>
+  <a href="consmmefs.html">CONSMMEFS</a>
+  <a href="index.html#contact" class="mobile-cta">Let's Talk</a>
+</div>
+<nav>
+  <a class="nav-logo" href="index.html">HRQ<span>.</span></a>
+  <a class="nav-back" href="index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg><span>All Projects</span></a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="project-hero">
+  <div class="hero-visual">
+    <div class="port-shell">
+      <div class="port-header">
+        <div class="port-logo-mark">OG.</div>
+        <div class="port-nav-dots">
+          <div class="port-nav-dot active"></div>
+          <div class="port-nav-dot"></div>
+          <div class="port-nav-dot"></div>
+          <div class="port-nav-dot"></div>
+        </div>
+      </div>
+      <div class="port-body">
+        <div class="port-hero-img">
+          <div style="font-family:'Bebas Neue';font-size:28px;letter-spacing:.05em;color:rgba(200,255,0,0.4);">OLADELE</div>
+        </div>
+        <div class="port-headline"></div>
+        <div class="port-sub"></div>
+        <div class="port-grid">
+          <div class="port-card f"></div>
+          <div class="port-card"></div>
+          <div class="port-card"></div>
+          <div class="port-card f"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="project-tag">Portfolio Design · Brand Identity</div>
+    <h1 class="project-title">Oladele <em>Graphics</em><br/>Portfolio</h1>
+    <div class="hero-meta-row">
+      <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">UI/UX Designer</div></div>
+      <div class="meta-item"><div class="meta-label">Timeline</div><div class="meta-value">2023</div></div>
+      <div class="meta-item"><div class="meta-label">Deliverable</div><div class="meta-value">Portfolio Website</div></div>
+      <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Figma · Framer</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">Overview</div>
+    <h2 class="section-title">A portfolio worthy<br/>of the work.</h2>
+    <p class="body-text">Oladele is a talented graphic designer whose work speaks for itself — but his digital presence wasn't. Potential clients were visiting his portfolio, not seeing the quality they were getting, and leaving to hire someone else. The work existed. The presentation didn't.</p>
+    <p class="body-text">My job: build a portfolio that communicated his design sensibility in the first 5 seconds, and made the journey from "visitor" to "booked client" feel effortless.</p>
+    <div class="tags-row"><span class="tag">Portfolio</span><span class="tag">Brand Identity</span><span class="tag">Visual Design</span><span class="tag">Framer</span><span class="tag">Freelancer</span></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">Impact</div>
+    <div class="metrics-row">
+      <div class="metric-box highlight"><div class="metric-num">3x</div><div class="metric-label">More Client Inquiries</div></div>
+      <div class="metric-box"><div class="metric-num">70%</div><div class="metric-label">Lower Bounce Rate</div></div>
+      <div class="metric-box"><div class="metric-num">Top 5</div><div class="metric-label">Dribbble Feature</div></div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">The Problem</div>
+    <h2 class="section-title">When great work<br/>goes unseen.</h2>
+    <div class="two-col">
+      <p class="body-text">Oladele's original portfolio was built on a generic template — clean but soulless. It failed to differentiate him in a crowded market where clients are choosing between multiple talented designers simultaneously.</p>
+      <p class="body-text">The bigger issue: the portfolio was organized around project categories (logos, posters, social media) rather than around outcomes and stories. Clients were seeing outputs, not understanding why Oladele's process led to better results.</p>
+    </div>
+    <div class="callout">
+      <div class="callout-label">Core Problem</div>
+      <p class="callout-text">"His portfolio said 'I do graphic design.' It needed to say 'I build brands that make businesses more money.'"</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">Strategy First</div>
+    <h2 class="section-title">Brand before<br/>buttons.</h2>
+    <p class="body-text">I started by treating this as a branding project, not a web design project. Before touching Figma, I worked with Oladele on his positioning: who is he for, what makes him different, and what should someone feel in the first 5 seconds on his site.</p>
+    <div class="process-list">
+      <div class="p-step"><div class="p-num">01</div><div><div class="p-title">Positioning Workshop</div><p class="p-desc">A 2-hour session to define Oladele's niche, ideal client type, and unique design philosophy. This drove every creative decision that followed.</p></div></div>
+      <div class="p-step"><div class="p-num">02</div><div><div class="p-title">Competitor Analysis</div><p class="p-desc">Reviewed 15 graphic designer portfolios in his target market. Identified the visual clichés everyone was using — and what the gaps were for standing out.</p></div></div>
+      <div class="p-step"><div class="p-num">03</div><div><div class="p-title">Work Curation</div><p class="p-desc">Selected and reframed the 6 strongest projects — rewriting descriptions from "here's what I made" to "here's the problem I solved and why it worked."</p></div></div>
+      <div class="p-step"><div class="p-num">04</div><div><div class="p-title">Visual Direction</div><p class="p-desc">Explored 3 distinct visual directions before landing on the bold, editorial approach that reflected his personality and the premium positioning we were after.</p></div></div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">Design Direction</div>
+    <h2 class="section-title">Three routes,<br/>one <em>choice.</em></h2>
+    <p class="body-text">We explored three distinct visual directions before committing. The chosen direction had to feel premium, memorable, and authentic to Oladele's bold, expressive style.</p>
+
+    <div class="direction-grid">
+      <div class="dir-card">
+        <div class="dir-label" style="color:var(--text-muted)">Option A</div>
+        <div class="dir-swatch" style="background:linear-gradient(135deg,#f8f8f8,#e8e8e8);border:1px solid rgba(255,255,255,0.1)"></div>
+        <div class="dir-name">Clean Minimal</div>
+        <p class="dir-desc">White space heavy, muted palette. Safe but generic — blends in rather than stands out.</p>
+      </div>
+      <div class="dir-card chosen">
+        <div class="chosen-badge">✓ Chosen</div>
+        <div class="dir-label chosen-lbl">Option B</div>
+        <div class="dir-swatch" style="background:linear-gradient(135deg,#080808,#141414);border:1px solid rgba(200,255,0,0.3)"></div>
+        <div class="dir-name">Bold Editorial</div>
+        <p class="dir-desc">Dark, high-contrast, dramatic typography. Instantly premium and deeply memorable — reflects his actual work.</p>
+      </div>
+      <div class="dir-card">
+        <div class="dir-label" style="color:var(--text-muted)">Option C</div>
+        <div class="dir-swatch" style="background:linear-gradient(135deg,#1a1a2e,#2d1b69)"></div>
+        <div class="dir-name">Dark Gradient</div>
+        <p class="dir-desc">Purple gradient aesthetic — popular in 2023 but already feeling dated. Strong but predictable.</p>
+      </div>
+    </div>
+
+    <!-- Screen showcases -->
+    <div class="port-screens" style="margin-top:48px;">
+      <div class="port-screen full-width reveal">
+        <div class="port-screen-inner">
+          <div style="width:100%;background:rgba(8,8,8,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;">
+            <div style="background:rgba(255,255,255,0.04);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <div style="font-family:'Bebas Neue';font-size:18px;letter-spacing:.05em;">OG.</div>
+              <div style="display:flex;gap:16px;">
+                <div style="width:40px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;"></div>
+                <div style="width:40px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;"></div>
+                <div style="width:40px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;"></div>
+                <div style="width:60px;height:24px;background:var(--accent);border-radius:2px;"></div>
+              </div>
+            </div>
+            <div style="padding:24px 32px;display:flex;gap:32px;align-items:center;">
+              <div style="flex:1;">
+                <div style="height:12px;width:80%;background:rgba(200,255,0,0.15);border-radius:3px;margin-bottom:10px;"></div>
+                <div style="height:40px;width:90%;background:rgba(255,255,255,0.08);border-radius:3px;margin-bottom:10px;"></div>
+                <div style="height:8px;width:60%;background:rgba(255,255,255,0.04);border-radius:3px;margin-bottom:20px;"></div>
+                <div style="display:flex;gap:10px;">
+                  <div style="height:28px;width:80px;background:var(--accent);border-radius:2px;"></div>
+                  <div style="height:28px;width:80px;background:rgba(255,255,255,0.06);border-radius:2px;"></div>
+                </div>
+              </div>
+              <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <div style="height:60px;background:rgba(200,255,0,0.06);border:1px solid rgba(200,255,0,0.1);border-radius:4px;"></div>
+                <div style="height:60px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:4px;"></div>
+                <div style="height:60px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:4px;"></div>
+                <div style="height:60px;background:rgba(200,255,0,0.06);border:1px solid rgba(200,255,0,0.1);border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-screen reveal">
+        <div class="port-screen-inner">
+          <div style="width:100%;background:rgba(8,8,8,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:12px;">
+            <div style="height:8px;width:60%;background:rgba(200,255,0,0.2);border-radius:3px;"></div>
+            <div style="height:100px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.08);border-radius:4px;"></div>
+            <div style="height:8px;width:80%;background:rgba(255,255,255,0.08);border-radius:3px;"></div>
+            <div style="height:6px;width:65%;background:rgba(255,255,255,0.04);border-radius:3px;"></div>
+            <div style="display:flex;gap:8px;">
+              <div style="height:20px;flex:1;background:var(--accent);border-radius:2px;"></div>
+              <div style="height:20px;flex:1;background:rgba(255,255,255,0.06);border-radius:2px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-screen reveal reveal-delay-1">
+        <div class="port-screen-inner">
+          <div style="width:100%;background:rgba(8,8,8,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:20px;">
+            <div style="height:6px;width:40%;background:rgba(200,255,0,0.3);border-radius:3px;margin-bottom:16px;"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+              <div style="height:48px;background:rgba(255,255,255,0.04);border-radius:3px;"></div>
+              <div style="height:48px;background:rgba(200,255,0,0.08);border:1px solid rgba(200,255,0,0.12);border-radius:3px;"></div>
+              <div style="height:48px;background:rgba(200,255,0,0.08);border:1px solid rgba(200,255,0,0.12);border-radius:3px;"></div>
+              <div style="height:48px;background:rgba(255,255,255,0.04);border-radius:3px;"></div>
+            </div>
+            <div style="height:8px;width:70%;background:rgba(255,255,255,0.06);border-radius:3px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">Outcome</div>
+    <h2 class="section-title">Work that converts,<br/>not just <em>impresses.</em></h2>
+    <p class="body-text">Within the first month of launch, client inquiry volume tripled compared to the previous portfolio. The bounce rate dropped dramatically — visitors were now actually engaging with the case studies and reaching the contact form instead of leaving after the hero section.</p>
+    <p class="body-text">The portfolio was also featured in the Dribbble weekly highlights — validation not just from clients, but from the design community that the visual direction was genuinely exceptional.</p>
+    <div class="callout" style="margin-top:40px;">
+      <div class="callout-label">Oladele's Feedback</div>
+      <p class="callout-text">"Clients now come to me already convinced. The portfolio does the selling before I even get on the call."</p>
+    </div>
+  </div>
+
+</div>
+
+<a class="back-to-first" href="speedy-card-lister.html">
+  <div><div class="next-label">Back to First Project</div><div class="next-title">← Speedy Card Lister AI</div></div>
+  <div class="next-arrow"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></div>
+</a>
+
+<footer>
+  <a class="footer-logo" href="index.html">HRQ<span>.</span></a>
+  <span class="footer-copy">© 2025 Harqheem</span>
+</footer>
+
+<script>
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cursor.classList.add('hover');ring.classList.add('hover');});el.addEventListener('mouseleave',()=>{cursor.classList.remove('hover');ring.classList.remove('hover');});});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  function toggleMobileMenu(){const m=document.getElementById('mobileMenu'),b=document.getElementById('hamburger');m.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+  document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mobileMenu').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.body.style.overflow='';}));
+</script>
+</body>
+</html>
