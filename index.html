@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Harqheem — Product Designer</title>
+<title>Harqheem — Product Designer | Fintech, AI & Mobile Apps</title>
+<meta name="description" content="Harqheem is a product designer based in Nigeria specialising in fintech dashboards, AI tools, and mobile apps. Available for freelance and full-time opportunities."/>
+<meta name="keywords" content="product designer, UI UX designer, Nigeria, fintech design, AI product design, mobile app design, Figma, Framer"/>
+<meta name="author" content="Harqheem (Akeem S.)"/>
+<meta property="og:title" content="Harqheem — Product Designer"/>
+<meta property="og:description" content="I design products that move people — from fintech dashboards to AI tools. Based in Nigeria, available worldwide."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://harqheem-portfolio.framer.website/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Harqheem — Product Designer"/>
+<meta name="twitter:description" content="Designing products that move people — fintech, AI tools, mobile apps."/>
+<link rel="icon" href="FavIcon.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -77,6 +88,11 @@
     letter-spacing: 0.05em;
     color: var(--white);
     text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo img {
+    width: 24px; height: 24px;
+    display: block; flex-shrink: 0;
   }
   .nav-logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 40px; list-style: none; }
@@ -139,14 +155,15 @@
 
   .hero-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(72px, 11vw, 180px);
-    line-height: 0.92;
+    font-size: clamp(72px, 11vw, 120px);
+    line-height: 1.0;
     letter-spacing: -0.01em;
     opacity: 0; animation: fadeUp 0.9s 0.35s forwards;
   }
   .hero-headline em {
     font-family: 'DM Serif Display', serif;
     font-style: italic;
+    line-height: 1.0;
     color: var(--accent);
   }
 
@@ -319,10 +336,10 @@
   .project-card:hover .project-img-inner { transform: scale(1.06); }
 
   /* Gradient overlays per project */
-  .proj-1 .project-img-inner { background-image: linear-gradient(135deg, #0f2027 0%, #203a43 40%, #2c5364 100%); }
-  .proj-2 .project-img-inner { background-image: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
-  .proj-3 .project-img-inner { background-image: linear-gradient(135deg, #0d0d0d 0%, #1a0000 50%, #2d0000 100%); }
-  .proj-4 .project-img-inner { background-image: linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #1f2937 100%); }
+  .proj-1 .project-img-inner { background-image: url('Image_sample.png'); background-size: cover; background-position: center top; }
+  .proj-2 .project-img-inner { background-image: url('Image_sample.png'); background-size: cover; background-position: center 30%; }
+  .proj-3 .project-img-inner { background-image: url('Image_sample.png'); background-size: cover; background-position: center 60%; }
+  .proj-4 .project-img-inner { background-image: url('Image_sample.png'); background-size: cover; background-position: center bottom; }
 
   /* Mock UI inside project images */
   .mock-ui {
@@ -626,6 +643,10 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 18px; color: var(--accent);
     flex-shrink: 0;
+    overflow: hidden;
+  }
+  .author-avatar img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
   }
   .testimonial-card.featured .author-avatar {
     background: rgba(8,8,8,0.15);
@@ -691,6 +712,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 20px; letter-spacing: 0.05em;
     color: var(--white); text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
   }
   .footer-logo span { color: var(--accent); }
   .footer-copy {
@@ -1010,7 +1032,10 @@
 
 <!-- ──────────────────────── NAV ──────────────────────── -->
 <nav id="navbar">
-  <a class="nav-logo" href="#">HRQ<span>.</span></a>
+  <a class="nav-logo" href="#">
+    <img src="Harqheem Logo.svg" alt="Harqheem logo"/>
+    Harqheem
+  </a>
   <ul class="nav-links">
     <li><a href="#projects">Work</a></li>
     <li><a href="#about">About</a></li>
@@ -1028,12 +1053,12 @@
 <section id="hero">
   <div class="hero-bg-text">DESIGN</div>
 
-  <div class="hero-eyebrow">Product Designer · Based in Nigeria</div>
+  <div class="hero-eyebrow">Product Designer · Fintech · AI Tools · Mobile</div>
 
   <h1 class="hero-headline">
-    I design<br/>
-    products that<br/>
-    <em>move people.</em>
+    I design products that
+    <br/><em>move people</em> —<br/>
+    from fintech to AI tools.
   </h1>
 
   <div class="hero-bottom">
@@ -1043,7 +1068,7 @@
         Available for new projects
       </div>
       <p class="hero-desc">
-        From zero-to-one products to nuanced redesigns — I craft digital experiences that solve real problems and feel genuinely delightful to use.
+        From zero-to-one fintech dashboards to AI-powered tools and mobile apps — I craft digital experiences that solve real problems, scale beautifully, and feel genuinely delightful to use.
       </p>
       <div class="hero-cta-group">
         <a href="#projects" class="btn-primary">
@@ -1101,7 +1126,7 @@
 <section id="projects">
   <div class="projects-header reveal">
     <div>
-      <div class="section-label">Selected Work <span>/ 2023–2025</span></div>
+      <div class="section-label">Selected Work <span>/ 2023–2026</span></div>
       <h2 class="section-headline">Featured<br/><em>Projects</em></h2>
     </div>
     <div class="work-count reveal">
@@ -1112,7 +1137,7 @@
   <div class="projects-grid">
 
     <!-- Project 1: Speedy Card Lister AI -->
-    <div class="project-card large proj-1 reveal" onclick="window.location='Speedy-card-lister.html'">
+    <div class="project-card large proj-1 reveal" onclick="window.location='speedy-card-lister.html'">
       <div class="project-img">
         <div class="project-img-inner"></div>
         <div class="mock-ui">
@@ -1228,12 +1253,7 @@
       <h2 class="section-headline">The person<br/>behind the<br/><em>pixels.</em></h2>
       <div class="about-image-wrap">
         <div class="about-image">
-          <div class="about-image-placeholder">
-            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
-            <span>Your Photo Here</span>
-          </div>
+          <img src="Image_sample.png" alt="Harqheem — Product Designer" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
         </div>
         <div class="about-image-badge">
           <span class="badge-num">2+</span>
@@ -1432,7 +1452,10 @@
         Akeem has been an able designer, quick learner, and an amicable member of our team. His design thinking, problem solving, and expertise at UI/UX design have made a valuable contribution to Techwize360 and Doorstep Dailies. I highly recommend him.
       </p>
       <div class="testimonial-author">
-        <div class="author-avatar">AT</div>
+        <div class="author-avatar">
+          <!-- Replace src with real photo: <img src="photos/aryan.jpg" alt="Aryan T."/> -->
+          <img src="Image_sample.png" alt="Aryan T."/>
+        </div>
         <div>
           <div class="author-name">Aryan T.</div>
           <div class="author-role">CMO, Techwize 360</div>
@@ -1446,7 +1469,10 @@
         One of the best designers I've ever worked with as a software engineer. He delivers fantastic UI while ensuring designs align with engineering principles — optimal flow, scalable systems. In a nutshell, he is awesome.
       </p>
       <div class="testimonial-author">
-        <div class="author-avatar">YA</div>
+        <div class="author-avatar">
+          <!-- Replace src with real photo: <img src="photos/yakub.jpg" alt="Yakub A."/> -->
+          <img src="Image_sample.png" alt="Yakub A."/>
+        </div>
         <div>
           <div class="author-name">Yakub A.</div>
           <div class="author-role">Software Engineer, Labyrinth Solutions</div>
@@ -1460,7 +1486,10 @@
         A workaholic and exceptional team leader. Diligent, highly dedicated, and consistently puts his best into every task. His commitment to excellence and ability to lead with integrity make him a valuable asset.
       </p>
       <div class="testimonial-author">
-        <div class="author-avatar">MS</div>
+        <div class="author-avatar">
+          <!-- Replace src with real photo: <img src="photos/moshood.jpg" alt="Moshood S."/> -->
+          <img src="Image_sample.png" alt="Moshood S."/>
+        </div>
         <div>
           <div class="author-name">Moshood S.</div>
           <div class="author-role">Frontend Developer, Asteria</div>
@@ -1488,7 +1517,7 @@
   </a>
 
   <div class="contact-links reveal">
-    <a href="/cdn-cgi/l/email-protection#83f7e6eeeaf7ecf3e6f0e2e8e2e2e8e6e6eeb2c3e4eee2eaefade0ecee" class="contact-link">Email</a>
+    <a href="mailto:temitopesakaakeem1@gmail.com" class="contact-link">Email</a>
     <a href="https://www.linkedin.com/in/harqheem/" target="_blank" class="contact-link">LinkedIn</a>
     <a href="https://dribbble.com/Harqheem" target="_blank" class="contact-link">Dribbble</a>
     <a href="https://www.behance.net/Harqheem" target="_blank" class="contact-link">Behance</a>
@@ -1498,8 +1527,10 @@
 
 <!-- ──────────────────────── FOOTER ──────────────────────── -->
 <footer>
-  <a class="footer-logo" href="#">HRQ<span>.</span></a>
-  <span class="footer-copy">© 2025 Harqheem. Designed with intent.</span>
+  <a class="footer-logo" href="#">
+    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA0IiBoZWlnaHQ9IjEwNCIgdmlld0JveD0iMCAwIDEwNCAxMDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy42MjkzOWUtMDUgMEgxOC41NjQzVjM4LjI2ODRDMzguMjUzNCAzNy41NzA1IDQ5LjE3NzEgNDIuOTgyIDU1LjUzOTUgNTMuOTU2NlYwSDc0LjEwMzdWMTA0SDU1LjUzOTVWNzcuMzI0NEM0NS42MTggNjEuMDIwMyAzNC41NzEyIDU1LjYwODggMjAuMjgyMyA1Ny4xNTk0VjU3LjMyMzhDMTkuNzEgNTcuMjY3MiAxOS4xMzcyIDU3LjIxMjcgMTguNTY0MyA1Ny4xNTk0VjEwNEg3LjYyOTM5ZS0wNVYwWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMDQgMTAzLjk5OUg4Ny45ODYxTDc5LjkxNzMgOTEuOTU3OVY2OS44MjI4TDEwNCAxMDMuOTk5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==" alt="Harqheem" style="width:24px;height:24px;"/> Harqheem
+  </a>
+  <span class="footer-copy">© 2026 Harqheem. Designed with intent.</span>
   <div class="footer-socials">
     <a href="https://dribbble.com/Harqheem" target="_blank">Dribbble</a>
     <a href="https://www.linkedin.com/in/harqheem/" target="_blank">LinkedIn</a>
