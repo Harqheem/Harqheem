@@ -60,6 +60,7 @@
   --mid:        #1A1A1A;
   --border:     rgba(245,242,237,0.12);
   --text-muted: rgba(245,242,237,0.45);
+  --pad:        64px;   /* horizontal page gutter */
 }
 
 
@@ -338,16 +339,16 @@ footer.footer-dark { background: var(--black); }
 #hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 120px 48px 64px;
+  padding: 140px var(--pad) 80px;
   position: relative; overflow: hidden;
 }
 .hero-bg-text {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%,-50%);
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(120px,18vw,280px);
+  font-size: clamp(140px,22vw,320px);
   color: transparent;
-  -webkit-text-stroke: 1px rgba(245,242,237,0.04);
+  -webkit-text-stroke: 1px rgba(245,242,237,0.05);
   white-space: nowrap; user-select: none; pointer-events: none;
   animation: bgDrift 20s ease-in-out infinite alternate;
 }
@@ -357,37 +358,39 @@ footer.footer-dark { background: var(--black); }
 }
 
 .hero-eyebrow {
-  font-size: 12px; font-weight: 500;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 24px;
-  display: flex; align-items: center; gap: 12px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 32px;
+  display: flex; align-items: center; gap: 16px;
   opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
 }
 .hero-eyebrow::before {
   content: ''; display: block;
-  width: 40px; height: 1px; background: var(--accent);
+  width: 52px; height: 1px; background: var(--accent);
+  flex-shrink: 0;
 }
 
 .hero-headline {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(72px,11vw,128px);
-  line-height: 0.92; letter-spacing: -0.01em;
+  font-size: clamp(88px,13vw,160px);
+  line-height: 0.88; letter-spacing: -0.02em;
   opacity: 0; animation: fadeUp 0.9s 0.35s forwards;
 }
 .hero-headline em {
   font-family: 'DM Serif Display', serif;
   font-style: italic; color: var(--accent);
+  font-size: 0.9em; /* italic sits slightly smaller for elegance */
 }
 
 .hero-bottom {
-  margin-top: 48px;
+  margin-top: 64px;
   display: flex; align-items: flex-end; justify-content: space-between;
   opacity: 0; animation: fadeUp 0.9s 0.55s forwards;
 }
 .hero-desc {
-  max-width: 420px;
+  max-width: 440px;
   font-family: 'Inter', sans-serif;
-  font-size: 16px; line-height: 1.7;
+  font-size: 17px; line-height: 1.75;
   color: var(--text-muted); font-weight: 300;
 }
 .hero-meta { text-align: right; }
@@ -440,13 +443,13 @@ footer.footer-dark { background: var(--black); }
 /* ─────────────────────────────────────────────────────────
    12. Section shells
 ───────────────────────────────────────────────────────── */
-section { padding: 120px 48px; }
+section { padding: 160px var(--pad); }
 
 .section-label {
   display: flex; align-items: center; gap: 16px;
   font-size: 11px; font-weight: 600;
   letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 64px;
+  color: var(--accent); margin-bottom: 20px;
 }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 80px; }
 .section-label span   { color: var(--text-muted); margin-left: 8px; }
@@ -455,6 +458,7 @@ section { padding: 120px 48px; }
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(48px,7vw,100px);
   line-height: 0.95; letter-spacing: -0.01em;
+  margin-bottom: 72px;
 }
 .section-headline em { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--accent); }
 
@@ -468,7 +472,7 @@ section { padding: 120px 48px; }
 #projects { background: var(--black); }
 .projects-header {
   display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 80px;
+  margin-bottom: 96px;
 }
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
 
@@ -673,7 +677,7 @@ section { padding: 120px 48px; }
 ───────────────────────────────────────────────────────── */
 #contact {
   background: var(--black); border-top: 1px solid var(--border);
-  text-align: center; padding: 120px 48px;
+  text-align: center; padding: 160px var(--pad);
   position: relative; overflow: hidden;
 }
 #contact::before {
@@ -1089,7 +1093,9 @@ section { padding: 120px 48px; }
   .scroll-indicator { display: none; }
 
   /* Sections */
-  section { padding: 64px 24px; }
+  section { padding: 100px 24px; }
+  #shots    { padding: 100px 24px 80px; }
+  .shots-marquee-outer { margin-left: -24px; margin-right: -24px; }
   .section-headline { font-size: clamp(40px,10vw,64px); }
 
   /* Projects */
@@ -1213,4 +1219,134 @@ section { padding: 120px 48px; }
   .meta-label     { font-size: 10px; }
   .meta-value     { font-size: 12px; }
   .fd-kpi-row     { flex-direction: column; }
+}
+
+/* ══════════════════════════════════════════════════════
+   RANDOM WORKS & SHOTS — CSS marquee (infinite auto-scroll)
+   ══════════════════════════════════════════════════════ */
+
+@keyframes shots-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+#shots {
+  padding: 160px var(--pad) 120px;
+  overflow: hidden;
+}
+
+/* Outer clip — hides the overflowing duplicate set */
+.shots-marquee-outer {
+  overflow: hidden;
+  margin-top: 56px;
+  /* Break out of section padding so belt is truly full-bleed */
+  margin-left:  calc(var(--pad) * -1);
+  margin-right: calc(var(--pad) * -1);
+  /* Soft edge fade */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image:         linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* Belt = SET A + SET B side by side, animates left by 50% (= one full SET width) */
+.shots-belt {
+  display: flex;
+  width: max-content;
+  animation: shots-scroll 32s linear infinite;
+}
+
+/* Pause the whole belt when hovering any card */
+.shots-belt:hover { animation-play-state: paused; }
+
+/* Each set is a flex row of cards */
+.shots-set {
+  display: flex;
+  gap: 20px;
+  padding-right: 20px; /* matches gap so loop is gapless */
+}
+
+/* ── Individual shot cards ── */
+.shot-card {
+  position: relative;
+  flex: 0 0 300px;
+  height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: transform 0.4s cubic-bezier(.22,.68,0,1.2),
+              border-color 0.3s ease,
+              box-shadow 0.4s ease;
+}
+.shot-card.tall { flex: 0 0 260px; height: 430px; }
+.shot-card.wide { flex: 0 0 440px; height: 300px; }
+
+.shot-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(.22,.68,0,1.2);
+  pointer-events: none;
+}
+
+/* Hover — lift, zoom, lime glow */
+.shot-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(200,255,0,0.4);
+  box-shadow: 0 24px 52px rgba(0,0,0,0.6), 0 0 0 1px rgba(200,255,0,0.15);
+  z-index: 2;
+}
+.shot-card:hover img { transform: scale(1.07); }
+
+/* ── Overlay: slides up on hover ── */
+.shot-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.3)  45%,
+    transparent      72%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px 20px 20px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+.shot-card:hover .shot-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shot-overlay span {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+}
+.shot-overlay::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 800px) {
+  .shot-card      { flex: 0 0 220px; height: 280px; }
+  .shot-card.tall { flex: 0 0 190px; height: 340px; }
+  .shot-card.wide { flex: 0 0 320px; height: 230px; }
+  /* Always show overlay — no hover on touch */
+  .shot-overlay { opacity: 1; transform: none; }
+  /* Slightly faster on small screens */
+  .shots-belt { animation-duration: 22s; }
 }
