@@ -488,10 +488,10 @@ section { padding: 120px 48px; }
 }
 .project-card:hover .project-img-inner { transform: scale(1.06); }
 
-.proj-1 .project-img-inner { background-image: url('Image_sample.png'); background-position: center top; }
-.proj-2 .project-img-inner { background-image: url('Image_sample.png'); background-position: center 30%; }
-.proj-3 .project-img-inner { background-image: url('Image_sample.png'); background-position: center 60%; }
-.proj-4 .project-img-inner { background-image: url('Image_sample.png'); background-position: center bottom; }
+.proj-1 .project-img-inner { background-image: url('Image Sample.png'); background-size: cover; background-position: center; }
+.proj-2 .project-img-inner { background-image: url('Image Sample.png'); background-size: cover; background-position: center; }
+.proj-3 .project-img-inner { background-image: url('Image Sample.png'); background-size: cover; background-position: center; }
+.proj-4 .project-img-inner { background-image: url('Image Sample.png'); background-size: cover; background-position: center; }
 
 /* Mock UI overlay inside cards */
 .mock-ui {
@@ -765,7 +765,6 @@ section { padding: 120px 48px; }
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 120px 48px 72px;
   position: relative; overflow: hidden;
-  background-image: url('Image_sample.png');
   background-size: cover; background-position: center;
 }
 .project-hero::after {
