@@ -74,7 +74,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--black);
   color: var(--white);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   cursor: none;
 }
@@ -133,7 +133,7 @@ nav.nav-project {
   background: rgba(8,8,8,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 24px var(--pad);
+  padding: 24px 48px;
 }
 
 .nav-logo {
@@ -273,7 +273,7 @@ nav.nav-project {
   display: inline-flex; align-items: center; gap: 10px;
   background: var(--accent); color: var(--black);
   padding: 16px 32px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 13px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   text-decoration: none;
@@ -285,7 +285,7 @@ nav.nav-project {
   display: inline-flex; align-items: center; gap: 10px;
   border: 1px solid var(--border); color: var(--white);
   padding: 16px 32px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 13px; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase;
   text-decoration: none;
@@ -609,7 +609,7 @@ section { padding: 160px var(--pad); }
 .process-step:hover { padding-left: 16px; }
 .process-step:hover .step-num { color: var(--accent); }
 .step-num     { font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1; color: rgba(245,242,237,0.12); min-width: 70px; transition: color 0.3s; }
-.step-title   { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.step-title   { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; }
 .step-desc    { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.7; color: var(--text-muted); font-weight: 300; }
 
 .process-visual         { position: sticky; top: 120px; }
@@ -765,21 +765,28 @@ section { padding: 160px var(--pad); }
    20. Project hero
 ───────────────────────────────────────────────────────── */
 .project-hero {
-  min-height: 90vh;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 0 72px;
+  height: 75vh;
+  min-height: 480px;
   position: relative; overflow: hidden;
-  background-size: cover; background-position: center;
+  background-size: cover; background-position: center top;
 }
 .project-hero::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.55) 35%, rgba(8,8,8,0.1) 65%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(8,8,8,0.25) 0%, transparent 40%);
 }
-.hero-content { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; width: 100%; padding: 0 var(--pad); }
+/* Info block sits BELOW the image on a solid background */
+.hero-content {
+  background: var(--black);
+  padding: 56px var(--pad) 64px;
+  max-width: none;
+  border-bottom: 1px solid var(--border);
+}
 .hero-content > * { animation: fadeUp 0.9s forwards; opacity: 0; }
 .hero-content > *:nth-child(1) { animation-delay: 0.2s; }
 .hero-content > *:nth-child(2) { animation-delay: 0.35s; }
 .hero-content > *:nth-child(3) { animation-delay: 0.5s; }
+/* Inner constraint to match .container width */
+.hero-content-inner { max-width: 1040px; margin: 0 auto; }
 
 .project-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .project-tag::before { content: ''; width: 30px; height: 1px; background: var(--accent); }
@@ -1168,8 +1175,9 @@ section { padding: 160px var(--pad); }
   .nav-back span  { display: none; }
   .nav-hamburger  { display: flex; }
 
-  .project-hero   { padding: 0 0 56px; min-height: 70vh; }
-  .hero-content   { padding: 0 24px; }
+  .project-hero   { height: 52vw; min-height: 280px; }
+  .hero-content   { padding: 40px 24px 48px; }
+  .hero-meta-row  { gap: 24px; flex-wrap: wrap; }
   .hero-visual    { display: none; }
   .project-title  { font-size: clamp(48px,14vw,80px); }
   .hero-meta-row  { gap: 24px; }
@@ -1282,7 +1290,7 @@ section { padding: 160px var(--pad); }
               box-shadow 0.4s ease;
 }
 .shot-card.tall { flex: 0 0 260px; height: 430px; }
-.shot-card.wide { flex: 0 0 440px; height: 300px; }
+.shot-card.wide { flex: 0 0 480px; height: 360px; }
 
 .shot-card img {
   width: 100%;
@@ -1326,7 +1334,7 @@ section { padding: 160px var(--pad); }
 }
 
 .shot-overlay span {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
