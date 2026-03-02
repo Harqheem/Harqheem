@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -39,7 +39,8 @@
 <!-- ──────────────────────── NAV ──────────────────────── -->
 <nav id="navbar">
   <a class="nav-logo" href="#">
-    <img src="Harqheem Logo.png" alt="Harqheem logo"/>
+    <img class="logo-dark" src="Harqheem Logo.png" alt="Harqheem logo"/>
+    <img class="logo-light" src="Harqheem Logo Light.png" alt="Harqheem logo"/>
     Harqheem
   </a>
   <ul class="nav-links">
@@ -50,9 +51,12 @@
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- ──────────────────────── HERO ──────────────────────── -->
@@ -206,7 +210,8 @@
       <h2 class="section-headline">The person<br/>behind the<br/><em>pixels.</em></h2>
       <div class="about-image-wrap">
         <div class="about-image">
-          <img src="Hakeem Potrait.png" alt="Harqheem — Product Designer photo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+          <img class="portrait-dark" src="Hakeem Potrait.png" alt="Harqheem — Product Designer photo" style="width:100%;height:100%;object-fit:cover;object-position:center top;"/>
+          <img class="portrait-light" src="Hakeem Potrait.png" alt="Harqheem — Product Designer photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
         </div>
         <div class="about-image-badge">
           <span class="badge-num">2+</span>
@@ -566,7 +571,8 @@
 <!-- ──────────────────────── FOOTER ──────────────────────── -->
 <footer>
   <a class="footer-logo" href="#">
-    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA0IiBoZWlnaHQ9IjEwNCIgdmlld0JveD0iMCAwIDEwNCAxMDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy42MjkzOWUtMDUgMEgxOC41NjQzVjM4LjI2ODRDMzguMjUzNCAzNy41NzA1IDQ5LjE3NzEgNDIuOTgyIDU1LjUzOTUgNTMuOTU2NlYwSDc0LjEwMzdWMTA0SDU1LjUzOTVWNzcuMzI0NEM0NS42MTggNjEuMDIwMyAzNC41NzEyIDU1LjYwODggMjAuMjgyMyA1Ny4xNTk0VjU3LjMyMzhDMTkuNzEgNTcuMjY3MiAxOS4xMzcyIDU3LjIxMjcgMTguNTY0MyA1Ny4xNTk0VjEwNEg3LjYyOTM5ZS0wNVYwWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMDQgMTAzLjk5OUg4Ny45ODYxTDc5LjkxNzMgOTEuOTU3OVY2OS44MjI4TDEwNCAxMDMuOTk5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==" alt="Harqheem" style="width:24px;height:24px;"/> Harqheem
+    <img class="logo-dark" src="Harqheem Logo.png" alt="Harqheem" style="width:24px;height:24px;"/>
+    <img class="logo-light" src="Harqheem Logo Light.png" alt="Harqheem" style="width:24px;height:24px;"/> Harqheem
   </a>
   <span class="footer-copy">© 2026 Harqheem. Designed with Love and Light.</span>
   <div class="footer-socials">
@@ -656,6 +662,25 @@ const statsObserver = new IntersectionObserver(entries => {
 
   document.querySelectorAll('.about-stats, .hero-meta').forEach(el => statsObserver.observe(el));
 
+
+
+  // ── Theme toggle ──────────────────────────────────────────────
+  (function(){
+    const root = document.documentElement;
+    const btn  = document.getElementById('themeToggle');
+    // Load saved preference, default to dark
+    const saved = localStorage.getItem('theme') || 'dark';
+    root.setAttribute('data-theme', saved);
+    function applyTheme(t){
+      root.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+    }
+    if(btn){
+      btn.addEventListener('click', function(){
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
 
 </script>
 </body>
