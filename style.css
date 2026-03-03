@@ -483,7 +483,11 @@ footer.footer-dark { background: var(--black); }
   color: var(--accent); margin-bottom: 32px;
   display: flex; align-items: center; gap: 16px;
   opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  /* Reset h1 browser defaults */
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
 }
+.eyebrow-sep { opacity: 0.5; }
 .hero-eyebrow::before {
   content: ''; display: block;
   width: 52px; height: 1px; background: var(--accent);
