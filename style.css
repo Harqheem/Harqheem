@@ -1219,7 +1219,8 @@ section { padding: 160px var(--pad); }
 
   /* Sections */
   section { padding: 100px 24px; }
-  .shots-marquee-outer { margin-left: 0; margin-right: 0; }
+  #shots { padding: 48px 24px 80px; }
+  .shots-marquee-outer { margin-left: -24px; margin-right: -24px; }
   .section-headline { font-size: 72px; }
 
   /* Projects */
@@ -1360,8 +1361,13 @@ section { padding: 160px var(--pad); }
 #testimonials { padding-bottom: 80px; }
 
 #shots {
-  padding: 80px 0 120px;
+  padding: 80px var(--pad) 120px;
   overflow: hidden;
+}
+
+.shots-marquee-outer {
+  margin-left:  calc(var(--pad) * -1);
+  margin-right: calc(var(--pad) * -1);
 }
 
 /* Full-bleed outer — no padding, no mask fade */
