@@ -410,12 +410,21 @@ nav.nav-project {
 ───────────────────────────────────────────────────────── */
 footer {
   background: var(--mid);
-  padding: 32px 48px;
-  display: flex; align-items: center; justify-content: space-between;
   border-top: 1px solid var(--border);
+  display: flex; flex-direction: column;
 }
 /* Project pages use black footer */
 footer.footer-dark { background: var(--black); }
+
+.footer-main {
+  padding: 32px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.footer-bottom {
+  padding: 16px 48px;
+  text-align: center;
+}
 
 .footer-logo {
   font-family: 'Bebas Neue', sans-serif;
@@ -1268,7 +1277,9 @@ section { padding: 160px var(--pad); }
   .contact-link { padding: 12px 16px; font-size: 11px; }
 
   /* Footer */
-  footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+  footer { flex-direction: column; }
+  .footer-main { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+  .footer-bottom { padding: 14px 24px; }
   .footer-socials { justify-content: center; }
 
   /* Modals */
@@ -1325,7 +1336,9 @@ section { padding: 160px var(--pad); }
   .next-project,
   .back-to-first  { padding: 48px 24px; flex-direction: column; gap: 24px; align-items: flex-start; }
 
-  footer          { flex-direction: column; gap: 16px; padding: 24px; }
+  footer          { flex-direction: column; }
+  .footer-main    { flex-direction: column; gap: 16px; padding: 24px; }
+  .footer-bottom  { padding: 14px 24px; }
 }
 
 
