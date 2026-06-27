@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Harqheem | Product Designer | SaaS & AI Platforms</title>
 
-<meta name="description" content="Harqheem is a Product Designer designing for global teams — specializing in SaaS platforms, AI tools, and scalable digital products focused on usability and measurable impact.">
+<meta name="description" content="Harqheem is a Product Designer designing for global teams — specializing in SaaS platforms, AI tools, and scalable digital products focused on usability and measurable impact."/>
 <meta name="author" content="Harqheem (Akeem Ayopelumi Saka)"/>
 
 <meta property="og:title" content="Product Designer | SaaS & AI Platforms | Harqheem"/>
@@ -19,7 +19,6 @@
 <meta property="og:locale:alternate" content="es_ES"/>
 <meta property="og:locale:alternate" content="it_IT"/>
 <meta property="og:locale:alternate" content="nl_NL"/>
-<meta property="og:locale:alternate" content="en_NG"/>
 <meta property="og:site_name" content="Harqheem Portfolio"/>
 <meta property="og:image" content="https://www.harqheem.com/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
@@ -32,15 +31,10 @@
 <meta name="twitter:image" content="https://www.harqheem.com/og-image.png"/>
 <meta name="twitter:image:alt" content="Harqheem — Product Designer"/>
 
-<meta name="robots" content="index, follow"><link rel="icon" href="FavIcon.png" type="image/png"/><!-- Replace favicon.png with your own icon file -->
-
-<link rel="canonical" href="https://www.harqheem.com/">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
-<link rel="preload" as="style" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
+<meta name="robots" content="index, follow"/>
+<link rel="icon" href="FavIcon.png" type="image/png"/>
+<link rel="canonical" href="https://www.harqheem.com/"/>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml"/>
 
 <script type="application/ld+json">
 {
@@ -86,584 +80,416 @@
   gtag('js', new Date());
   gtag('config', 'G-3NB2YHYVVS');
 </script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursor-ring"></div>
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Harqheem logo">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M7.62939e-05 0H18.5643V38.2684C38.2534 37.5705 49.1771 42.982 55.5395 53.9566V0H74.1037V104H55.5395V77.3244C45.618 61.0203 34.5712 55.6088 20.2823 57.1594V57.3238C19.71 57.2672 19.1372 57.2127 18.5643 57.1594V104H7.62939e-05V0Z" fill="currentColor"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M104 103.999H87.9861L79.9173 91.9579V69.8228L104 103.999Z" fill="currentColor"/>
+    </svg>
+    Harqheem
+    <span class="nav-logo-dot"></span>
+  </a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#process">Process</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-status">
+    <span class="nav-status-dot"></span>
+    Available for projects &nbsp;·&nbsp; 2026
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<!-- ──────────────────────── MOBILE MENU ──────────────────────── -->
+<!-- ── MOBILE MENU ──────────────────────────────────────────── -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#projects" onclick="closeMobileMenu()">Work</a>
+  <a href="#work" onclick="closeMobileMenu()">Work</a>
   <a href="#about" onclick="closeMobileMenu()">About</a>
   <a href="#skills" onclick="closeMobileMenu()">Skills</a>
   <a href="#process" onclick="closeMobileMenu()">Process</a>
-  <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
-  <a href="#contact" class="mobile-cta" onclick="closeMobileMenu()">Let's Talk</a>
+  <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
 </div>
 
-<!-- ──────────────────────── NAV ──────────────────────── -->
-<nav id="navbar">
-  <a class="nav-logo" href="#">
-    <img class="logo-dark" src="Harqheem Logo.png" alt="Harqheem logo"/>
-    <img class="logo-light" src="Harqheem Logo light.png" alt="Harqheem logo"/>
-    Harqheem
-  </a>
-  <ul class="nav-links">
-    <li><a href="#projects">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
-  </ul>
-  <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-    <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+<!-- ── TICKER ────────────────────────────────────────────────── -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">UI/UX Design <span class="dot">◆</span></span>
+    <span class="ticker-item">Product Strategy <span class="dot">◆</span></span>
+    <span class="ticker-item">Design Systems <span class="dot">◆</span></span>
+    <span class="ticker-item">User Research <span class="dot">◆</span></span>
+    <span class="ticker-item">Prototyping <span class="dot">◆</span></span>
+    <span class="ticker-item">Interaction Design <span class="dot">◆</span></span>
+    <span class="ticker-item">Visual Design <span class="dot">◆</span></span>
+    <span class="ticker-item">Figma <span class="dot">◆</span></span>
+    <span class="ticker-item">Framer <span class="dot">◆</span></span>
+    <span class="ticker-item">UI/UX Design <span class="dot">◆</span></span>
+    <span class="ticker-item">Product Strategy <span class="dot">◆</span></span>
+    <span class="ticker-item">Design Systems <span class="dot">◆</span></span>
+    <span class="ticker-item">User Research <span class="dot">◆</span></span>
+    <span class="ticker-item">Prototyping <span class="dot">◆</span></span>
+    <span class="ticker-item">Interaction Design <span class="dot">◆</span></span>
+    <span class="ticker-item">Visual Design <span class="dot">◆</span></span>
+    <span class="ticker-item">Figma <span class="dot">◆</span></span>
+    <span class="ticker-item">Framer <span class="dot">◆</span></span>
   </div>
-</nav>
+</div>
 
-<!-- ──────────────────────── HERO ──────────────────────── -->
-<section id="hero">
-  <div class="hero-bg-text">DESIGN</div>
-
-  <h1 class="hero-eyebrow">Product Designer <span class="eyebrow-sep">·</span> Designing for Global Teams</h1>
-  
-
-  <h2 class="hero-headline">
-    Turning ideas<br/>
-    into products<br/>
-    <em>people love.</em>
-  </h2>
-
-  <div class="hero-bottom">
-    <div>
-      <div class="avail-badge">
-        <span class="avail-dot"></span>
-        Available for new projects
-      </div>
-      <p class="hero-desc">
-        I'm Harqheem, a Product Designer working with teams globally — specializing in SaaS platforms, AI tools, and scalable digital products focused on usability and measurable growth.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#projects" class="btn-primary">
-          View Work
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://calendly.com/temitopesakaakeem1/30min" target="_blank" class="btn-secondary">Book a Call</a>
-      </div>
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-label">Product Designer · SaaS &amp; AI Platforms · Designing for Global Teams</div>
+    <div class="hero-title">
+      <div>Design</div>
+      <div>that <em>moves</em></div>
+      <div>people<span class="red">.</span></div>
     </div>
-    <div class="hero-meta">
-      <div class="stat">
-        <span class="num">2+</span>
-        <span class="label">Years Experience</span>
-      </div>
-      <div class="stat">
-        <span class="num">15+</span>
-        <span class="label">Projects Shipped</span>
-      </div>
-      <div class="stat">
-        <span class="num">99%</span>
-        <span class="label">Client Satisfaction</span>
+    <div class="hero-bottom">
+      <p class="hero-desc">I'm Harqheem — working with global teams to build SaaS platforms, AI tools, and scalable digital products focused on usability and measurable growth.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="https://calendly.com/temitopesakaakeem1/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+        <a class="btn-secondary" href="#work">View Work</a>
       </div>
     </div>
   </div>
-
-  <div class="scroll-indicator">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
+  <div class="hero-right">
+    <div class="stat-cell">
+      <div class="stat-num" data-count="2" data-suffix="+">2+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" data-count="15" data-suffix="+">15+</div>
+      <div class="stat-label">Projects Shipped</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" data-count="99" data-suffix="%">99%</div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
   </div>
 </section>
 
-<!-- ──────────────────────── MARQUEE ──────────────────────── -->
-<div class="marquee-section">
-  <div class="marquee-track" id="marquee">
-    <div class="marquee-item"><span class="marquee-dot"></span> UI/UX Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Product Strategy</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Design Systems</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> User Research</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Prototyping</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Interaction Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Visual Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Figma</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Framer</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> UI/UX Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Product Strategy</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Design Systems</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> User Research</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Prototyping</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Interaction Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Visual Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Figma</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Framer</div>
+<!-- ── WORK ──────────────────────────────────────────────────── -->
+<section class="section" id="work">
+  <div class="section-header">
+    <div class="section-index">01 / Work</div>
+    <div class="section-title">Selected <em>Projects</em></div>
   </div>
-</div>
-
-<!-- ──────────────────────── PROJECTS ──────────────────────── -->
-<section id="projects">
-  <div class="projects-header reveal">
-    <div>
-      <div class="section-label">Selected Work <span>/ 2023 - Present</span></div>
-      <h2 class="section-headline">Featured<br/><em>Projects</em></h2>
-    </div>
-    <div class="work-count reveal">
-      <strong>03</strong> case studies
-    </div>
-  </div>
-
   <div class="projects-grid">
 
-    <!-- Project 1: Speedy Card Lister AI -->
-    <div class="project-card large proj-1 reveal" onclick="window.location='Speedy-card-lister.html'">
-      <div class="project-img">
-        <img src="speedy 1.png" alt="Speedy Card Lister AI — project cover" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-      </div>
-      <div class="project-info">
-        <div>
-          <div class="project-tag">AI Product · Web App</div>
-          <div class="project-title-home">Speedy Card Lister AI</div>
-          <div class="project-year">2024–Present</div>
-        </div>
-        <a class="project-arrow" href="Speedy-card-lister.html">
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Project 2: RideON -->
-    <div class="project-card proj-2 reveal reveal-delay-1" onclick="window.location='rideon.html'">
-      <div class="project-img">
-        <img src="Ride 01.png" alt="RideON — project cover" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-      </div>
-      <div class="project-info">
-        <div>
-          <div class="project-tag">Mobile · Transport</div>
-          <div class="project-title-home">RideON</div>
-          <div class="project-year">2024</div>
-        </div>
-        <a class="project-arrow" href="rideon.html">
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Project 3: Oladele Portfolio -->
-    <div class="project-card proj-3 reveal reveal-delay-2" onclick="window.location='oladele.html'">
-      <div class="project-img">
-        <img src="Oladele 1.png" alt="Oladele Graphics Portfolio — project cover" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-      </div>
-      <div class="project-info">
-        <div>
-          <div class="project-tag">Portfolio · Brand</div>
-          <div class="project-title-home">Oladele Graphics Portfolio</div>
-          <div class="project-year">2023</div>
-        </div>
-        <a class="project-arrow" href="oladele.html">
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ──────────────────────── ABOUT ──────────────────────── -->
-<section id="about">
-  <div class="about-grid">
-    <div class="about-left reveal">
-      <div class="section-label">About Me</div>
-      <h2 class="section-headline">The person<br/>behind the<br/><em>pixels.</em></h2>
-      <div class="about-image-wrap">
-        <div class="about-image">
-          <img class="portrait-dark" src="Hakeem Potrait dark.png" alt="Harqheem — Product Designer photo" style="width:100%;height:100%;object-fit:cover;object-position:center top;"/>
-          <img class="portrait-light" src="Hakeem Potrait.png" alt="Harqheem — Product Designer photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
-        </div>
-        <div class="about-image-badge">
-          <span class="badge-num">2+</span>
-          <span class="badge-text">Years<br/>Designing</span>
+    <a class="project-card fade-in" href="Speedy-card-lister.html">
+      <img src="speedy 1.png" alt="Speedy Card Lister AI" class="project-img"/>
+      <div class="project-body">
+        <div class="project-num">/ 01</div>
+        <div class="project-title">Speedy Card Lister AI</div>
+        <div class="project-year">2024 — Present</div>
+        <p class="project-desc">An AI-powered tool that helps eBay sellers list cards faster — combining smart categorisation with a clean, efficient interface.</p>
+        <div class="project-tags">
+          <span class="project-tag">AI Product</span>
+          <span class="project-tag">Web App</span>
         </div>
       </div>
-    </div>
-
-    <div class="about-right reveal reveal-delay-2">
-      <p class="about-intro">
-        I believe great design is <em>invisible</em> — it guides without demanding attention.
-      </p>
-      <p class="about-body">
-        Hey, I'm Saka Akeem Ayopelumi (Harqheem) — a product designer who works with teams globally, passionate about crafting digital experiences that feel effortless and meaningful. I've worked across industries, from AI tools to transport apps, taking products from the first sketch all the way to polished, shippable interfaces.<br/><br/>
-        I care deeply about clean visuals, smart information architecture, and making sure every user feels considered. Design, to me, is a conversation between function and feeling.<br/><br/>
-        Outside work? I'm gaming, reading, watching football, or getting embarrassed on the lawn tennis court 🎾.
-      </p>
-
-      <div class="about-stats">
-        <div class="about-stat">
-          <div class="n">15+</div>
-          <div class="l">Projects</div>
-        </div>
-        <div class="about-stat">
-          <div class="n">4</div>
-          <div class="l">Companies</div>
-        </div>
-        <div class="about-stat">
-          <div class="n">6</div>
-          <div class="l">Industries</div>
-        </div>
-      </div>
-
-      <a href="https://docs.google.com/document/d/1vmKWLScbxWR31nsUumTRp1xVfiPv_V5_7LMXwVrL9Jc/edit" target="_blank" class="btn-primary">
-        View Resume
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ──────────────────────── SKILLS ──────────────────────── -->
-<section id="skills">
-  <div class="section-label reveal">Skills & Tools</div>
-  <h2 class="section-headline reveal" style="margin-bottom:64px;">What I bring<br/>to the <em>table.</em></h2>
-
-  <div class="skills-grid">
-    <div class="skill-card reveal">
-      <svg class="skill-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="6" y="6" width="36" height="36" rx="2"/>
-        <path d="M6 18h36M18 6v36"/>
-      </svg>
-      <div class="skill-title">UI Design</div>
-      <p class="skill-desc">Crafting pixel-perfect interfaces with a strong visual language — layouts that are as beautiful as they are functional.</p>
-      <div class="skill-tags">
-        <span class="skill-tag">Figma</span>
-        <span class="skill-tag">Framer</span>
-        <span class="skill-tag">Design Systems</span>
-        <span class="skill-tag">Accessibility</span>
-      </div>
-    </div>
-
-    <div class="skill-card reveal reveal-delay-1">
-      <svg class="skill-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-        <circle cx="24" cy="24" r="8"/>
-        <path d="M24 8v4M24 36v4M8 24h4M36 24h4M12.7 12.7l2.8 2.8M32.5 32.5l2.8 2.8M32.5 15.5l-2.8 2.8M12.7 35.3l2.8-2.8"/>
-      </svg>
-      <div class="skill-title">UX Research</div>
-      <p class="skill-desc">Getting inside the user's head — interviews, usability tests, and data synthesis to validate design decisions.</p>
-      <div class="skill-tags">
-        <span class="skill-tag">User Interviews</span>
-        <span class="skill-tag">Usability Testing</span>
-        <span class="skill-tag">Miro</span>
-        <span class="skill-tag">Journey Maps</span>
-      </div>
-    </div>
-
-    <div class="skill-card reveal reveal-delay-2">
-      <svg class="skill-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M8 38l8-8 6 6 8-10 10 12"/>
-        <rect x="6" y="6" width="36" height="36" rx="2"/>
-      </svg>
-      <div class="skill-title">Product Strategy</div>
-      <p class="skill-desc">Connecting design decisions to business outcomes — defining the right problems before jumping to solutions.</p>
-      <div class="skill-tags">
-        <span class="skill-tag">Product Thinking</span>
-        <span class="skill-tag">Wireframing</span>
-        <span class="skill-tag">Ideation</span>
-        <span class="skill-tag">Roadmapping</span>
-      </div>
-    </div>
-
-    <div class="skill-card reveal">
-      <svg class="skill-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="10" y="8" width="28" height="32" rx="2"/>
-        <path d="M16 18h16M16 24h12M16 30h8"/>
-      </svg>
-      <div class="skill-title">Prototyping</div>
-      <p class="skill-desc">High-fidelity interactive prototypes that feel like the real thing — communicating intent clearly to engineers and stakeholders.</p>
-      <div class="skill-tags">
-        <span class="skill-tag">Figma Prototyping</span>
-        <span class="skill-tag">Micro-Interactions</span>
-        <span class="skill-tag">Animation</span>
-      </div>
-    </div>
-
-    <div class="skill-card reveal reveal-delay-1">
-      <svg class="skill-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-        <circle cx="16" cy="32" r="6"/><circle cx="32" cy="16" r="6"/>
-        <path d="M16 26V12l16-6v14"/>
-      </svg>
-      <div class="skill-title">Visual Design</div>
-      <p class="skill-desc">Strong typographic foundations, purposeful color systems, and compositional layouts that make brands feel premium.</p>
-      <div class="skill-tags">
-        <span class="skill-tag">Typography</span>
-        <span class="skill-tag">Color Theory</span>
-        <span class="skill-tag">Brand Identity</span>
-      </div>
-    </div>
-
-    <div class="skill-card reveal reveal-delay-2">
-      <svg class="skill-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M24 8l4 8h8l-6.5 6 2.5 8L24 26l-8 4 2.5-8L12 16h8z"/>
-      </svg>
-      <div class="skill-title">Design Leadership</div>
-      <p class="skill-desc">Collaborating cross-functionally with engineers and PMs. Running design critiques, defining design ops, and elevating team output.</p>
-      <div class="skill-tags">
-        <span class="skill-tag">Cross-Functional</span>
-        <span class="skill-tag">Design Critique</span>
-        <span class="skill-tag">Mentorship</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ──────────────────────── PROCESS ──────────────────────── -->
-<section id="process">
-  <div class="process-grid">
-    <div class="process-visual reveal">
-      <div class="section-label">My Process</div>
-      <h2 class="section-headline" style="margin-bottom: 32px;">How I<br/><em>think</em> &<br/>work.</h2>
-      <div class="process-diagram">
-        <div class="orbit-item pos-1">Discover</div>
-        <div class="orbit-item pos-2">Build</div>
-        <div class="orbit-item pos-3">Test</div>
-        <div class="orbit-item pos-4">Define</div>
-        <div class="process-center">DESIGN</div>
-        <p class="process-quote">
-          "Good design is about understanding the problem so deeply that the solution becomes obvious."
-        </p>
-      </div>
-    </div>
-
-    <div class="process-steps reveal reveal-delay-2">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <div class="step-title">Discover & Listen</div>
-          <p class="step-desc">I start by deeply understanding the problem space — user interviews, competitive analysis, and stakeholder conversations. No assumptions, only evidence.</p>
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <div class="step-title">Define the Problem</div>
-          <p class="step-desc">Synthesizing research into clear problem statements, user personas, and opportunity maps. Defining the right problem before designing anything.</p>
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <div class="step-title">Design & Prototype</div>
-          <p class="step-desc">From rough sketches to polished high-fidelity prototypes. Rapid iteration, design reviews, and close collaboration with engineers throughout.</p>
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <div class="step-title">Test & Refine</div>
-          <p class="step-desc">Usability testing, A/B experiments, and data review to validate decisions. I treat shipping as the beginning of the design process, not the end.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ──────────────────────── TESTIMONIALS ──────────────────────── -->
-<section id="testimonials">
-  <div class="section-label reveal">Social Proof</div>
-  <h2 class="section-headline reveal" style="margin-bottom:64px;">What people<br/>are <em>saying.</em></h2>
-
-  <div class="testimonials-grid">
-    <div class="testimonial-card featured reveal">
-      <div class="quote-mark">"</div>
-      <p class="testimonial-text">
-        Akeem has been an able designer, quick learner, and an amicable member of our team. His design thinking, problem solving, and expertise at UI/UX design have made a valuable contribution to Techwize360 and Doorstep Dailies. I highly recommend him.
-      </p>
-      <div class="testimonial-author">
-        <div class="author-avatar">
-          <img src="Aryan.png" alt="Aryan T. — CMO, Techwize 360" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"/>
-        </div>
-        <div>
-          <div class="author-name">Aryan T.</div>
-          <div class="author-role">CMO, Techwize 360</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testimonial-card reveal reveal-delay-1">
-      <div class="quote-mark">"</div>
-      <p class="testimonial-text">
-        One of the best designers I've ever worked with as a software engineer. He delivers fantastic UI while ensuring designs align with engineering principles — optimal flow, scalable systems. In a nutshell, he is awesome.
-      </p>
-      <div class="testimonial-author">
-        <div class="author-avatar">
-          <img src="Yaqoob.png" alt="Yakub A. — Software Engineer, Labyrinth Solutions" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"/>
-        </div>
-        <div>
-          <div class="author-name">Yakub A.</div>
-          <div class="author-role">Software Engineer, Labyrinth Solutions</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testimonial-card reveal reveal-delay-2">
-      <div class="quote-mark">"</div>
-      <p class="testimonial-text">
-        A workaholic and exceptional team leader. Diligent, highly dedicated, and consistently puts his best into every task. His commitment to excellence and ability to lead with integrity make him a valuable asset.
-      </p>
-      <div class="testimonial-author">
-        <div class="author-avatar">
-          <img src="Moshood.png" alt="Moshood S. — Frontend Developer, Asteria" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"/>
-        </div>
-        <div>
-          <div class="author-name">Moshood S.</div>
-          <div class="author-role">Frontend Developer, Asteria</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ──────────────────────── RANDOM WORKS ──────────────────────── -->
-<section id="shots">
-  <div class="section-label reveal">Random Works &amp; Shots</div>
-  <h2 class="section-headline reveal">Designs I've<br/>made along <em>the way.</em></h2>
-
-  <div class="shots-marquee-outer">
-  <div class="shots-belt">
-
-      <!-- ── SET A ── -->
-      <div class="shots-set">
-        <div class="shot-card wide">
-          <img src="Ecommerce.png" alt="Design shot 01"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="Events.png" alt="Design shot 02"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="LMS 1.png" alt="Design shot 03"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="Stock.png" alt="Design shot 04"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="fin.png" alt="Design shot 05"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="LMS 2.png" alt="Design shot 06"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="ecom.png" alt="Design shot 07"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="neuro.png" alt="Design shot 08"/>
-        </div>
-      </div>
-
-      <!-- ── SET B (identical clone for seamless loop) ── -->
-      <div class="shots-set" aria-hidden="true">
-        <div class="shot-card wide">
-          <img src="Ecommerce.png" alt="Design shot 01"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="Events.png" alt="Design shot 02"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="LMS 1.png" alt="Design shot 03"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="Stock.png" alt="Design shot 04"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="fin.png" alt="Design shot 05"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="LMS 2.png" alt="Design shot 06"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="ecom.png" alt="Design shot 07"/>
-        </div>
-        <div class="shot-card wide">
-          <img src="neuro.png" alt="Design shot 08"/>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ──────────────────────── CONTACT ──────────────────────── -->
-<section id="contact">
-  <div class="avail-badge reveal">
-    <span class="avail-dot"></span>
-    Open to opportunities
-  </div>
-  <h2 class="contact-big reveal">
-    Let's build<br/>something<br/><em>great.</em>
-  </h2>
-  <p class="contact-sub reveal">
-    Whether you're a founder with a vision, a company with a design challenge, or a team looking for a thoughtful collaborator — I'd love to hear from you.
-  </p>
-  <a href="https://calendly.com/temitopesakaakeem1/30min" target="_blank" class="btn-primary reveal">
-    Book a 30-min Call
-    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </a>
-
-  <div class="contact-links reveal">
-    <a href="https://www.linkedin.com/in/harqheem/" target="_blank" class="contact-link">LinkedIn</a>
-    <a href="https://dribbble.com/Harqheem" target="_blank" class="contact-link">Dribbble</a>
-    <a href="https://www.behance.net/Harqheem" target="_blank" class="contact-link">Behance</a>
-    <a href="https://contra.com/akeem_saka_kkdbjxj8" target="_blank" class="contact-link">Contra</a>
-    <a href="https://docs.google.com/document/d/1vmKWLScbxWR31nsUumTRp1xVfiPv_V5_7LMXwVrL9Jc/edit" target="_blank" class="contact-link">Resume</a>
-  </div>
-</section>
-
-<!-- ──────────────────────── FOOTER ──────────────────────── -->
-<footer>
-  <div class="footer-main">
-    <a class="footer-logo" href="#">
-      <img class="logo-dark" src="Harqheem Logo.png" alt="Harqheem" style="width:24px;height:24px;"/>
-      <img class="logo-light" src="Harqheem Logo light.png" alt="Harqheem" style="width:24px;height:24px;"/> Harqheem
     </a>
-    <div class="footer-socials">
-      <a href="https://dribbble.com/Harqheem" target="_blank">Dribbble</a>
-      <a href="https://www.linkedin.com/in/harqheem/" target="_blank">LinkedIn</a>
-      <a href="https://www.behance.net/Harqheem" target="_blank">Behance</a>
-      <a href="https://contra.com/akeem_saka_kkdbjxj8" target="_blank">Contra</a>
+
+    <a class="project-card fade-in" href="rideon.html">
+      <img src="Ride 01.png" alt="RideON" class="project-img"/>
+      <div class="project-body">
+        <div class="project-num">/ 02</div>
+        <div class="project-title">RideON</div>
+        <div class="project-year">2024</div>
+        <p class="project-desc">A mobile transport app designed to make urban commuting seamless — from booking to tracking, every touchpoint considered.</p>
+        <div class="project-tags">
+          <span class="project-tag">Mobile</span>
+          <span class="project-tag">Transport</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="project-card fade-in" href="oladele.html">
+      <img src="Oladele 1.png" alt="Oladele Graphics Portfolio" class="project-img"/>
+      <div class="project-body">
+        <div class="project-num">/ 03</div>
+        <div class="project-title">Oladele Graphics Portfolio</div>
+        <div class="project-year">2023</div>
+        <p class="project-desc">A bold portfolio site for a visual artist — balancing editorial typography with expressive imagery to showcase their creative range.</p>
+        <div class="project-tags">
+          <span class="project-tag">Portfolio</span>
+          <span class="project-tag">Brand</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────────────── -->
+<section class="section" id="about">
+  <div class="section-header">
+    <div class="section-index">02 / About</div>
+    <div class="section-title">The person <em>behind the pixels</em></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-left fade-in">
+      <blockquote class="about-quote">"Great design is invisible — it guides without demanding attention."</blockquote>
+      <div>
+        <p class="about-text">I'm Saka Akeem Ayopelumi (Harqheem) — a product designer working with teams globally, passionate about crafting digital experiences that feel effortless and meaningful. I've worked across industries, from AI tools to transport apps, taking products from the first sketch all the way to polished, shippable interfaces.</p>
+        <p class="about-extra">I care deeply about clean visuals, smart information architecture, and making sure every user feels considered. Design, to me, is a conversation between function and feeling.<br/><br/>Outside work? I'm gaming, reading, watching football, or getting embarrassed on the lawn tennis court 🎾.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn-primary" href="https://docs.google.com/document/d/1vmKWLScbxWR31nsUumTRp1xVfiPv_V5_7LMXwVrL9Jc/view" target="_blank" rel="noopener noreferrer">View Resume</a>
+        <a class="btn-secondary" href="https://calendly.com/temitopesakaakeem1/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-img-block">
+        <img src="Hakeem Potrait dark.png" alt="Harqheem — Product Designer"/>
+        <span class="about-img-caption">Harqheem — Product Designer</span>
+      </div>
+      <div class="about-stats-row">
+        <div class="about-stat">
+          <div class="about-stat-num" data-count="15" data-suffix="+">15+</div>
+          <div class="about-stat-label">Projects</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num" data-count="4" data-suffix="">4</div>
+          <div class="about-stat-label">Companies</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num" data-count="6" data-suffix="">6</div>
+          <div class="about-stat-label">Industries</div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Harqheem (Akeem Ayopelumi Saka). Designed with Love and Light.</span>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────────────────────────── -->
+<section class="section" id="skills">
+  <div class="section-header">
+    <div class="section-index">03 / Skills</div>
+    <div class="section-title">What I bring <em>to the table</em></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-cell fade-in">
+      <span class="skill-num">01</span>
+      <div class="skill-name">UI Design</div>
+      <div class="skill-desc">Pixel-perfect interfaces with a strong visual language — layouts that are as beautiful as they are functional.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Figma</span>
+        <span class="skill-tool">Framer</span>
+        <span class="skill-tool">Design Systems</span>
+        <span class="skill-tool">Accessibility</span>
+      </div>
+    </div>
+    <div class="skill-cell fade-in">
+      <span class="skill-num">02</span>
+      <div class="skill-name">UX Research</div>
+      <div class="skill-desc">Getting inside the user's head — interviews, usability tests, and data synthesis to validate design decisions.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">User Interviews</span>
+        <span class="skill-tool">Usability Testing</span>
+        <span class="skill-tool">Miro</span>
+        <span class="skill-tool">Journey Maps</span>
+      </div>
+    </div>
+    <div class="skill-cell fade-in">
+      <span class="skill-num">03</span>
+      <div class="skill-name">Product Strategy</div>
+      <div class="skill-desc">Connecting design decisions to business outcomes — defining the right problems before jumping to solutions.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Product Thinking</span>
+        <span class="skill-tool">Wireframing</span>
+        <span class="skill-tool">Ideation</span>
+        <span class="skill-tool">Roadmapping</span>
+      </div>
+    </div>
+    <div class="skill-cell fade-in">
+      <span class="skill-num">04</span>
+      <div class="skill-name">Prototyping</div>
+      <div class="skill-desc">High-fidelity interactive prototypes that feel like the real thing — communicating intent clearly to engineers and stakeholders.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Figma Prototyping</span>
+        <span class="skill-tool">Micro-Interactions</span>
+        <span class="skill-tool">Animation</span>
+      </div>
+    </div>
+    <div class="skill-cell fade-in">
+      <span class="skill-num">05</span>
+      <div class="skill-name">Visual Design</div>
+      <div class="skill-desc">Strong typographic foundations, purposeful color systems, and compositional layouts that make brands feel premium.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Typography</span>
+        <span class="skill-tool">Color Theory</span>
+        <span class="skill-tool">Brand Identity</span>
+      </div>
+    </div>
+    <div class="skill-cell fade-in">
+      <span class="skill-num">06</span>
+      <div class="skill-name">Design Leadership</div>
+      <div class="skill-desc">Cross-functional collaboration with engineers and PMs. Running design critiques, defining design ops, and elevating team output.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Cross-Functional</span>
+        <span class="skill-tool">Design Critique</span>
+        <span class="skill-tool">Mentorship</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ────────────────────────────────────────────────── -->
+<section class="section" id="process">
+  <div class="section-header">
+    <div class="section-index">04 / Process</div>
+    <div class="section-title">How I <em>think &amp; work</em></div>
+  </div>
+  <div class="process-grid">
+    <div class="process-step fade-in">
+      <div class="step-num">01</div>
+      <div class="step-name">Discover &amp; Listen</div>
+      <div class="step-desc">Deeply understanding the problem space — user interviews, competitive analysis, and stakeholder conversations. No assumptions, only evidence.</div>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">02</div>
+      <div class="step-name">Define the Problem</div>
+      <div class="step-desc">Synthesizing research into clear problem statements, user personas, and opportunity maps. Defining the right problem before designing anything.</div>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">03</div>
+      <div class="step-name">Design &amp; Prototype</div>
+      <div class="step-desc">From rough sketches to polished high-fidelity prototypes. Rapid iteration, design reviews, and close collaboration with engineers throughout.</div>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">04</div>
+      <div class="step-name">Test &amp; Refine</div>
+      <div class="step-desc">Usability testing, A/B experiments, and data review to validate decisions. Shipping is the beginning of the design process, not the end.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ────────────────────────────────────────────────── -->
+<section class="section" id="reviews">
+  <div class="section-header">
+    <div class="section-index">05 / Reviews</div>
+    <div class="section-title">What people are <em>saying</em></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial fade-in">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">Akeem has been an able designer, quick learner, and an amicable member of our team. His design thinking, problem solving, and expertise at UI/UX design have made a valuable contribution to Techwize360 and Doorstep Dailies. I highly recommend him.</p>
+      <div class="quote-author">
+        <div class="quote-avatar"><img src="Aryan.png" alt="Aryan T."/></div>
+        <div>
+          <div class="quote-author-name">Aryan T.</div>
+          <div class="quote-author-role">CMO, Techwize 360</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial fade-in">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">One of the best designers I've ever worked with as a software engineer. He delivers fantastic UI while ensuring designs align with engineering principles — optimal flow, scalable systems. In a nutshell, he is awesome.</p>
+      <div class="quote-author">
+        <div class="quote-avatar"><img src="Yaqoob.png" alt="Yakub A."/></div>
+        <div>
+          <div class="quote-author-name">Yakub A.</div>
+          <div class="quote-author-role">Software Engineer, Labyrinth Solutions</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial fade-in">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">A workaholic and exceptional team leader. Diligent, highly dedicated, and consistently puts his best into every task. His commitment to excellence and ability to lead with integrity make him a valuable asset.</p>
+      <div class="quote-author">
+        <div class="quote-avatar"><img src="Moshood.png" alt="Moshood S."/></div>
+        <div>
+          <div class="quote-author-name">Moshood S.</div>
+          <div class="quote-author-role">Frontend Developer, Asteria</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RANDOM WORKS & SHOTS ───────────────────────────────────── -->
+<section class="shots-section">
+  <div class="section-header">
+    <div class="section-index">06 / Shots</div>
+    <div class="section-title">Designs I've made <em>along the way</em></div>
+  </div>
+  <div class="shots-belt">
+    <div class="shots-set">
+      <div class="shot-card"><img src="Ecommerce.png" alt="Design shot — Ecommerce"/></div>
+      <div class="shot-card"><img src="Events.png" alt="Design shot — Events"/></div>
+      <div class="shot-card"><img src="LMS 1.png" alt="Design shot — LMS"/></div>
+      <div class="shot-card"><img src="Stock.png" alt="Design shot — Stock"/></div>
+      <div class="shot-card"><img src="fin.png" alt="Design shot — Finance"/></div>
+      <div class="shot-card"><img src="LMS 2.png" alt="Design shot — LMS 2"/></div>
+      <div class="shot-card"><img src="ecom.png" alt="Design shot — Ecom"/></div>
+      <div class="shot-card"><img src="neuro.png" alt="Design shot — Neuro"/></div>
+    </div>
+    <div class="shots-set" aria-hidden="true">
+      <div class="shot-card"><img src="Ecommerce.png" alt=""/></div>
+      <div class="shot-card"><img src="Events.png" alt=""/></div>
+      <div class="shot-card"><img src="LMS 1.png" alt=""/></div>
+      <div class="shot-card"><img src="Stock.png" alt=""/></div>
+      <div class="shot-card"><img src="fin.png" alt=""/></div>
+      <div class="shot-card"><img src="LMS 2.png" alt=""/></div>
+      <div class="shot-card"><img src="ecom.png" alt=""/></div>
+      <div class="shot-card"><img src="neuro.png" alt=""/></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────── -->
+<section class="section" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left fade-in">
+      <h2 class="contact-headline">Let's build<br/>something<br/><em>great.</em></h2>
+      <p class="contact-sub">Whether you are a founder with a vision, a company with a design challenge, or a team looking for a thoughtful collaborator — I'd love to hear from you.</p>
+      <div class="contact-btns">
+        <a class="btn-primary" href="https://calendly.com/temitopesakaakeem1/30min" target="_blank" rel="noopener noreferrer">Book a 30-min Call</a>
+        <a class="btn-secondary" href="https://docs.google.com/document/d/1vmKWLScbxWR31nsUumTRp1xVfiPv_V5_7LMXwVrL9Jc/view" target="_blank" rel="noopener noreferrer">View Resume</a>
+      </div>
+    </div>
+    <div class="contact-right fade-in">
+      <div class="social-label">Find me on</div>
+      <a class="social-link" href="https://www.linkedin.com/in/harqheem/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="social-arrow">↗</span></a>
+      <a class="social-link" href="https://dribbble.com/Harqheem" target="_blank" rel="noopener noreferrer">Dribbble <span class="social-arrow">↗</span></a>
+      <a class="social-link" href="https://www.behance.net/Harqheem" target="_blank" rel="noopener noreferrer">Behance <span class="social-arrow">↗</span></a>
+      <a class="social-link" href="https://contra.com/akeem_saka_kkdbjxj8" target="_blank" rel="noopener noreferrer">Contra <span class="social-arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-cell">© 2026 Harqheem (Akeem Ayopelumi Saka). Designed with Love and Light.</div>
+  <div class="footer-cell" style="justify-content:center;">Product Designer · Working with teams globally</div>
+  <div class="footer-cell">
+    <div class="footer-socials">
+      <a href="https://dribbble.com/Harqheem" target="_blank" rel="noopener noreferrer">Dribbble</a>
+      <a href="https://www.linkedin.com/in/harqheem/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.behance.net/Harqheem" target="_blank" rel="noopener noreferrer">Behance</a>
+      <a href="https://contra.com/akeem_saka_kkdbjxj8" target="_blank" rel="noopener noreferrer">Contra</a>
+    </div>
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursor-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
-  });
-
-  function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-
-  document.querySelectorAll('a, button, .project-card, .skill-card, .testimonial-card').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); ring.classList.add('hover'); });
-    el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); ring.classList.remove('hover'); });
-  });
-
-  // Mobile menu
+<script>
+  // ── Mobile menu ──────────────────────────────────────────────
   function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const btn = document.getElementById('hamburger');
@@ -676,66 +502,45 @@
     document.getElementById('hamburger').classList.remove('open');
     document.body.style.overflow = '';
   }
+  document.getElementById('hamburger').addEventListener('click', toggleMobileMenu);
 
-  // Nav scroll
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  // ── Fade-in on scroll ────────────────────────────────────────
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const siblings = e.target.parentElement.querySelectorAll('.fade-in');
+        siblings.forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 100);
+        });
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Animated number count-up
+  // ── Animated count-up ────────────────────────────────────────
   function countUp(el) {
-    const target = parseInt(el.textContent);
+    const target = parseInt(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
     if (isNaN(target)) return;
-    const suffix = el.textContent.replace(/[0-9]/g,'');
     let current = 0;
-    const step = target / 40;
+    const step = target / 60;
     const timer = setInterval(() => {
       current = Math.min(current + step, target);
       el.textContent = Math.floor(current) + suffix;
       if (current >= target) clearInterval(timer);
-    }, 30);
+    }, 20);
   }
 
-      
-const statsObserver = new IntersectionObserver(entries => {
+  const countObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.querySelectorAll('.n, .num').forEach(countUp);
-        statsObserver.unobserve(e.target);
+        e.target.querySelectorAll('[data-count]').forEach(countUp);
+        countObs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
-  document.querySelectorAll('.about-stats, .hero-meta').forEach(el => statsObserver.observe(el));
-
-
-
-  // ── Theme toggle ──────────────────────────────────────────────
-  (function(){
-    const root = document.documentElement;
-    const btn  = document.getElementById('themeToggle');
-    // Load saved preference, default to dark
-    const saved = localStorage.getItem('theme') || 'dark';
-    root.setAttribute('data-theme', saved);
-    function applyTheme(t){
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-    }
-    if(btn){
-      btn.addEventListener('click', function(){
-        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-      });
-    }
-  })();
-
+  document.querySelectorAll('.hero-right, .about-stats-row').forEach(el => countObs.observe(el));
 </script>
 </body>
 </html>
