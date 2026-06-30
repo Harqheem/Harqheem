@@ -228,8 +228,9 @@ html.fonts-loading .shots-set{animation-play-state:paused;}
 .project-desc{font-size:15px;line-height:1.55;color:var(--ink-soft);margin-bottom:18px;}
 .project-tags{display:flex;gap:8px;flex-wrap:wrap;}
 .project-tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;border:2px solid var(--line);padding:5px 11px;border-radius:999px;}
-.motion-card{background:var(--ink);color:var(--paper);}
-.motion-card .project-tag{border-color:var(--lime);color:var(--lime);}
+.motion-card{background:var(--ink-fixed);color:var(--paper-fixed);}
+.motion-card .project-tag{background:transparent;border-color:var(--lime);color:var(--lime);}
+.motion-card .project-year, .motion-card .project-desc{color:#cbc4d9;}
 .motion-card-visual{height:260px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#1a1626,#1a1626 12px,#211a33 12px,#211a33 24px);border-bottom:3px solid var(--line);}
 @media (max-width:860px){.projects-grid{grid-template-columns:1fr;}}
 
@@ -433,13 +434,13 @@ footer, .footer-dark{
 .next-project, .back-to-first{
   display:flex;align-items:center;justify-content:space-between;
   max-width:920px;margin:0 auto 60px;padding:34px 40px;
-  border:3px solid var(--line);border-radius:20px;background:var(--ink);color:var(--paper);
+  border:3px solid var(--line);border-radius:20px;background:var(--ink-fixed);color:var(--paper-fixed);
   box-shadow:var(--shadow-off);transition:transform .2s,box-shadow .2s;
 }
 .next-project:hover, .back-to-first:hover{transform:translate(4px,4px);box-shadow:3px 3px 0 var(--lime);}
 .next-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--lime);margin-bottom:6px;letter-spacing:.06em;}
 .next-title{font-family:var(--grotesk);font-weight:800;font-size:26px;}
-.next-arrow svg{width:26px;height:26px;stroke:var(--paper);fill:none;stroke-width:2;}
+.next-arrow svg{width:26px;height:26px;stroke:var(--paper-fixed);fill:none;stroke-width:2;}
 
 /* ============================================================
    MOTION PAGE
