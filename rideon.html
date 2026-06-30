@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"/>
 <link rel="icon" href="FavIcon.png" type="image/png"/>
@@ -9,7 +9,7 @@
 <meta name="author" content="Harqheem"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css"/>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NB2YHYVVS"></script>
@@ -21,18 +21,20 @@
 </script>
 </head>
 <body>
+<div id="progress-bar"></div>
+<div id="page-wipe"></div>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#projects">← All Work</a>
-  <a href="Speedy-card-lister.html">Speedy Card</a>
-  <a href="oladele.html">Oladele</a>
-  <a href="index.html#contact" class="mobile-cta">Let's Talk</a>
+  <a data-transition href="index.html#work">← All Work</a>
+  <a data-transition href="Speedy-card-lister.html">Speedy Card</a>
+  <a data-transition href="oladele.html">Oladele</a>
+  <a data-transition href="index.html#contact" class="mobile-cta">Let's Talk</a>
 </div>
 <nav class="nav-project">
-  <a class="nav-logo" href="index.html"><img class="logo-dark nav-logo-img" src="Harqheem Logo.png" alt="Harqheem logo"/><img class="logo-light nav-logo-img" src="Harqheem Logo light.png" alt="Harqheem logo"/> Harqheem</a>
-  <a class="nav-back" href="index.html#projects">
+  <a class="nav-logo" data-transition href="index.html"><img class="logo-dark nav-logo-img" src="Harqheem Logo.png" alt="Harqheem logo"/><img class="logo-light nav-logo-img" src="Harqheem Logo light.png" alt="Harqheem logo"/> Harqheem</a>
+  <a class="nav-back" data-transition href="index.html#work">
     <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
     <span>All Projects</span>
   </a>
@@ -139,16 +141,51 @@
 
 </div>
 
-<a class="next-project" href="oladele.html">
+<a class="next-project" data-transition href="oladele.html">
   <div><div class="next-label">Next Project</div><div class="next-title">Oladele Graphics Portfolio →</div></div>
   <div class="next-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
 </a>
 
 <footer class="footer-dark">
-  <a class="footer-logo" href="index.html"><img class="logo-dark nav-logo-img" src="Harqheem Logo.png" alt="Harqheem logo"/><img class="logo-light nav-logo-img" src="Harqheem Logo light.png" alt="Harqheem logo"/> Harqheem</a>
+  <a class="footer-logo" data-transition href="index.html"><img class="logo-dark nav-logo-img" src="Harqheem Logo.png" alt="Harqheem logo"/><img class="logo-light nav-logo-img" src="Harqheem Logo light.png" alt="Harqheem logo"/> Harqheem</a>
   <span class="footer-copy">© 2026 Harqheem</span>
 </footer>
 <script>
+
+  // ── Page load progress bar ──────────────────────────────────────
+  (function(){
+    const bar = document.getElementById('progress-bar');
+    let w = 0;
+    const grow = setInterval(() => { w = Math.min(w + Math.random()*18, 88); bar.style.width = w+'%'; }, 120);
+    window.addEventListener('load', () => { clearInterval(grow); bar.classList.add('done'); });
+  })();
+
+  // ── Page transition wipe ─────────────────────────────────────────
+  (function(){
+    const wipe = document.getElementById('page-wipe');
+    document.querySelectorAll('a[data-transition]').forEach(link=>{
+      link.addEventListener('click', e=>{
+        const href = link.getAttribute('href');
+        if(!href || href.startsWith('#')) return;
+        e.preventDefault();
+        wipe.style.transition = 'transform .45s cubic-bezier(0.76,0,0.24,1)';
+        wipe.style.transform = 'scaleX(1) skewX(-9deg)';
+        setTimeout(()=>{ window.location.href = href; }, 420);
+      });
+    });
+    window.addEventListener('pageshow', () => {
+      wipe.style.transition = 'none';
+      wipe.style.transformOrigin = 'right';
+      wipe.style.transform = 'scaleX(1) skewX(-9deg)';
+      requestAnimationFrame(()=>{
+        requestAnimationFrame(()=>{
+          wipe.style.transition = 'transform .55s cubic-bezier(0.16,1,0.3,1)';
+          wipe.style.transform = 'scaleX(0) skewX(-9deg)';
+        });
+      });
+    });
+  })();
+
   const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
@@ -165,7 +202,7 @@
     const root = document.documentElement;
     const btn  = document.getElementById('themeToggle');
     // Load saved preference, default to dark
-    const saved = localStorage.getItem('theme') || 'dark';
+    const saved = localStorage.getItem('theme') || 'light';
     root.setAttribute('data-theme', saved);
     function applyTheme(t){
       root.setAttribute('data-theme', t);
