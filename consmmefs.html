@@ -24,55 +24,27 @@
   <a data-transition href="oladele.html">Oladele</a>
   <a data-transition href="index.html#contact" class="mobile-cta">Let's Talk</a>
 </div>
+
 <nav class="nav-project">
-  <a class="nav-logo" data-transition href="index.html"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA0IiBoZWlnaHQ9IjEwNCIgdmlld0JveD0iMCAwIDEwNCAxMDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy42MjkzOWUtMDUgMEgxOC41NjQzVjM4LjI2ODRDMzguMjUzNCAzNy41NzA1IDQ5LjE3NzEgNDIuOTgyIDU1LjUzOTUgNTMuOTU2NlYwSDc0LjEwMzdWMTA0SDU1LjUzOTVWNzcuMzI0NEM0NS42MTggNjEuMDIwMyAzNC41NzEyIDU1LjYwODggMjAuMjgyMyA1Ny4xNTk0VjU3LjMyMzhDMTkuNzEgNTcuMjY3MiAxOS4xMzcyIDU3LjIxMjcgMTguNTY0MyA1Ny4xNTk0VjEwNEg3LjYyOTM5ZS0wNVYwWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMDQgMTAzLjk5OUg4Ny45ODYxTDc5LjkxNzMgOTEuOTU3OVY2OS44MjI4TDEwNCAxMDMuOTk5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==" alt="Harqheem logo" class="nav-logo-img"/> Harqheem</a>
-  <a class="nav-back" data-transition href="index.html#work"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg><span>All Projects</span></a>
-  <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+  <a class="nav-logo" data-transition href="index.html">
+    <svg class="nav-logo-svg" viewBox="0 0 104 104" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.62939e-05 0H18.5643V38.2684C38.2534 37.5705 49.1771 42.982 55.5395 53.9566V0H74.1037V104H55.5395V77.3244C45.618 61.0203 34.5712 55.6088 20.2823 57.1594V57.3238C19.71 57.2672 19.1372 57.2127 18.5643 57.1594V104H7.62939e-05V0Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M104 103.999H87.9861L79.9173 91.9579V69.8228L104 103.999Z" fill="currentColor"/></svg>
+    Harqheem <span class="nav-logo-dot"></span>
+  </a>
+  <a class="nav-back" data-transition href="index.html#work">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    <span>All Projects</span>
+  </a>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <a class="btn-secondary" href="index.html#contact" style="padding:10px 22px;">Let's Talk</a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
-<div class="project-hero">
-  <div class="hero-visual">
-    <div class="dash-shell">
-      <div class="dash-topbar">
-        <div class="dash-tabs">
-          <div class="dash-tab active">Overview</div>
-          <div class="dash-tab">Reports</div>
-          <div class="dash-tab">Settings</div>
-        </div>
-      </div>
-      <div class="dash-body">
-        <div class="dash-sidebar">
-          <div class="dash-nav-item active"></div>
-          <div class="dash-nav-item"></div>
-          <div class="dash-nav-item"></div>
-          <div class="dash-nav-item"></div>
-          <div class="dash-nav-item"></div>
-        </div>
-        <div class="dash-main">
-          <div class="kpi-row">
-            <div class="kpi accent"><div class="kpi-val">₦4.2M</div><div class="kpi-lbl"></div></div>
-            <div class="kpi"><div class="kpi-val" style="color:var(--white)">247</div><div class="kpi-lbl"></div></div>
-            <div class="kpi"><div class="kpi-val" style="color:var(--white)">98%</div><div class="kpi-lbl"></div></div>
-          </div>
-          <div class="chart-area">
-            <div class="chart-bar" style="height:30%"></div>
-            <div class="chart-bar a" style="height:60%"></div>
-            <div class="chart-bar" style="height:45%"></div>
-            <div class="chart-bar a" style="height:80%"></div>
-            <div class="chart-bar" style="height:55%"></div>
-            <div class="chart-bar a" style="height:70%"></div>
-            <div class="chart-bar" style="height:40%"></div>
-            <div class="chart-bar a" style="height:90%"></div>
-          </div>
-          <div class="dash-table">
-            <div class="table-row"><div class="table-cell accent-cell"></div><div class="table-cell"></div><div class="table-cell"></div></div>
-            <div class="table-row"><div class="table-cell"></div><div class="table-cell accent-cell"></div><div class="table-cell"></div></div>
-            <div class="table-row"><div class="table-cell"></div><div class="table-cell"></div><div class="table-cell accent-cell"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="project-hero" style="background-image:url('image 4.png');"></div>
 
   <div class="hero-content">
     <div class="project-tag">Dashboard · Fintech</div>
@@ -152,49 +124,15 @@
       </div>
     </div>
 
-    <!-- Full dashboard screen -->
-    <div class="screen-showcase reveal" style="margin-top:48px;">
-      <div class="screen-label">Final Design — Main Dashboard</div>
-      <div class="full-dash">
-        <div class="fd-header">
-          <div class="fd-title">CONSMMEFS Admin</div>
-          <div class="fd-actions">
-            <div class="fd-btn">+ New</div>
-          </div>
-        </div>
-        <div class="fd-body">
-          <div class="fd-nav">
-            <div class="fd-nav-item active"><div class="fd-nav-dot"></div><div class="fd-nav-line" style="width:70%"></div></div>
-            <div class="fd-nav-item"><div class="fd-nav-dot"></div><div class="fd-nav-line" style="width:55%"></div></div>
-            <div class="fd-nav-item"><div class="fd-nav-dot"></div><div class="fd-nav-line" style="width:65%"></div></div>
-            <div class="fd-nav-item"><div class="fd-nav-dot"></div><div class="fd-nav-line" style="width:50%"></div></div>
-            <div class="fd-nav-item"><div class="fd-nav-dot"></div><div class="fd-nav-line" style="width:60%"></div></div>
-          </div>
-          <div class="fd-content">
-            <div class="fd-kpi-row">
-              <div class="fd-kpi h"><div class="fd-kpi-val">₦4.2M</div><div class="fd-kpi-lbl">Total Assets</div></div>
-              <div class="fd-kpi"><div class="fd-kpi-val">247</div><div class="fd-kpi-lbl">Members</div></div>
-              <div class="fd-kpi"><div class="fd-kpi-val">12</div><div class="fd-kpi-lbl">Pending Loans</div></div>
-              <div class="fd-kpi"><div class="fd-kpi-val">98%</div><div class="fd-kpi-lbl">Repayment Rate</div></div>
-            </div>
-            <div class="fd-chart">
-              <div class="fd-bar" style="height:30%"></div>
-              <div class="fd-bar a" style="height:55%"></div>
-              <div class="fd-bar" style="height:40%"></div>
-              <div class="fd-bar a" style="height:75%"></div>
-              <div class="fd-bar" style="height:50%"></div>
-              <div class="fd-bar a" style="height:65%"></div>
-              <div class="fd-bar" style="height:45%"></div>
-              <div class="fd-bar a" style="height:88%"></div>
-              <div class="fd-bar" style="height:60%"></div>
-              <div class="fd-bar a" style="height:95%"></div>
-            </div>
-            <div class="fd-table-header"><div class="fd-th"></div><div class="fd-th"></div><div class="fd-th"></div><div class="fd-th" style="width:60px;flex:none;"></div></div>
-            <div class="fd-row"><div class="fd-cell a"></div><div class="fd-cell"></div><div class="fd-cell"></div><div class="fd-cell" style="width:60px;flex:none;background:rgba(200,255,0,0.2)"></div></div>
-            <div class="fd-row"><div class="fd-cell"></div><div class="fd-cell a"></div><div class="fd-cell"></div><div class="fd-cell" style="width:60px;flex:none;"></div></div>
-            <div class="fd-row"><div class="fd-cell"></div><div class="fd-cell"></div><div class="fd-cell a"></div><div class="fd-cell" style="width:60px;flex:none;"></div></div>
-          </div>
-        </div>
+    <div class="screens-grid" style="grid-template-columns:1fr 1fr;margin-top:48px;">
+      <div class="screen-frame">
+        <img src="image 4.png" alt="CONSMMEFS — Main dashboard overview" />
+      </div>
+      <div class="screen-frame">
+        <img src="image 4.png" alt="CONSMMEFS — Reports module" />
+      </div>
+      <div class="screen-frame">
+        <img src="image 4.png" alt="CONSMMEFS — Member management" />
       </div>
     </div>
   </div>
@@ -217,9 +155,14 @@
   <div class="next-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
 </a>
 
-<footer class="footer-dark">
-  <a class="footer-logo" data-transition href="index.html"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA0IiBoZWlnaHQ9IjEwNCIgdmlld0JveD0iMCAwIDEwNCAxMDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy42MjkzOWUtMDUgMEgxOC41NjQzVjM4LjI2ODRDMzguMjUzNCAzNy41NzA1IDQ5LjE3NzEgNDIuOTgyIDU1LjUzOTUgNTMuOTU2NlYwSDc0LjEwMzdWMTA0SDU1LjUzOTVWNzcuMzI0NEM0NS42MTggNjEuMDIwMyAzNC41NzEyIDU1LjYwODggMjAuMjgyMyA1Ny4xNTk0VjU3LjMyMzhDMTkuNzEgNTcuMjY3MiAxOS4xMzcyIDU3LjIxMjcgMTguNTY0MyA1Ny4xNTk0VjEwNEg3LjYyOTM5ZS0wNVYwWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMDQgMTAzLjk5OUg4Ny45ODYxTDc5LjkxNzMgOTEuOTU3OVY2OS44MjI4TDEwNCAxMDMuOTk5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==" alt="Harqheem logo" class="nav-logo-img"/> Harqheem</a>
-  <span class="footer-copy">© 2026 Harqheem</span>
+<footer>
+  <div class="footer-cell">© 2026 Harqheem (Akeem Ayopelumi Saka)</div>
+  <div class="footer-cell">Lagos, Nigeria — Available Worldwide</div>
+  <div class="footer-cell footer-socials">
+    <a href="https://dribbble.com/Harqheem" target="_blank" rel="noopener noreferrer">Dribbble</a>
+    <a href="https://www.linkedin.com/in/harqheem/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://www.behance.net/Harqheem" target="_blank" rel="noopener noreferrer">Behance</a>
+  </div>
 </footer>
 
 <script>
@@ -267,6 +210,16 @@
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   function toggleMobileMenu(){const m=document.getElementById('mobileMenu'),b=document.getElementById('hamburger');m.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
   document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mobileMenu').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.body.style.overflow='';}));
+
+  // ── Theme toggle ──────────────────────────────────────────────
+  (function(){
+    const root = document.documentElement;
+    const btn  = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme') || 'light';
+    root.setAttribute('data-theme', saved);
+    function applyTheme(t){ root.setAttribute('data-theme',t); localStorage.setItem('theme',t); }
+    if(btn){ btn.addEventListener('click', function(){ applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'); }); }
+  })();
 </script>
 </body>
 </html>
